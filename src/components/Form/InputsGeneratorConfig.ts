@@ -41,7 +41,7 @@ const inputList = [
     inputType: 'number',
     className: 'inscricaoEstadual',
   },
-  { label: 'Text', inputType: 'textarea' },
+  { label: 'Text', inputType: 'textarea' }
 ];
 
 const reactKeys = inputList.map(() => crypto.randomUUID());
