@@ -13,16 +13,30 @@ export default function MaskedInput(props: MaskedInputProps) {
   return (
     <div className={classCss} key={props.key}>
       <label>{label}:</label>
-      <Controller
-        control={controllerHooksForm}
-        name={label}
-        render={({ field }) => <IMaskInput mask={mask} ref={field.ref} onAccept={(value, mask) => field.onChange(value)} />}
-        rules={{pattern: {
-          value: regex,
-          message: message
-        }}}
-      />
-      {props.errors[label] && <p>erro!</p>}
+      <div className='input_error-message_container'>
+        <Controller
+          control={controllerHooksForm}
+          name={label}
+          render={({
+            field: { onChange, onBlur, value, ref },
+            fieldState: { invalid, isTouched, isDirty, error },
+            formState,
+          }) => (
+            <IMaskInput
+              mask={mask}
+              ref={ref}
+              onAccept={(value, mask) => onChange(value)}
+            />
+          )}
+          rules={{
+            pattern: {
+              value: regex,
+              message: message,
+            },
+          }}
+        />
+        {props.errors[label] && <span>{message}</span>}
+      </div>
     </div>
   );
 }

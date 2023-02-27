@@ -12,7 +12,7 @@ export default function BasicInput(props: BasicInputProps
   const { label, inputType, className, maxLength, step } = props.input;
   
   let cssClass = 'input ';
-  //cssClass += props.input.className ? props.input.className : props.input.label;
+  cssClass += className ? className : label;
 
   return (
     <div className={cssClass} key={props.key}>

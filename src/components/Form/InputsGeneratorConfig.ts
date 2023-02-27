@@ -6,8 +6,8 @@ const inputList = [
     className: 'doubleFloat'
   },
   { label: 'String', inputType: 'text' },
-  { label: 'Date', inputType: 'date' },
-  { label: 'Time', inputType: 'time', step: 1 },
+  { label: 'Date', inputType: 'text', mask: '00/00/0000', regex: /\d{2}\/\d{2}\/\d{4}/, message: 'Data inválida' },
+  { label: 'Time', inputType: 'text', mask: '00:00:00', regex: /\d{2}:\d{2}:\d{2}/ },
   { label: 'Boolean', inputType: 'boolean' },
   {
     label: 'Email',
@@ -27,7 +27,7 @@ const inputList = [
     inputType: 'text',
     mask: '000.000.000-00',
     regex: /\d{3}\.\d{3}\.\d{3}-\d{2}/g,
-    message: 'CPF inválida!',
+    message: 'CPF inválido!',
   },
   {
     label: 'CNPJ',

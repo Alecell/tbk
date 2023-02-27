@@ -11,6 +11,8 @@ export type basicInputType = {
   className?: string;
   step?: number;
   maxLength?: number;
+  rows?: number;
+  cols?: number;
 };
 
 export type maskedInputType = basicInputType & {
