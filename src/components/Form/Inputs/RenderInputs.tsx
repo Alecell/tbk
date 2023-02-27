@@ -5,6 +5,8 @@ import { reactKeys } from '../InputsGeneratorConfig';
 import MaskedInput from './MaskedInput/MaskedInput';
 import Textarea from './Textarea/Textarea';
 import './RenderInputs.css';
+import { verifiedInputType } from '../Types';
+import InputWithValidation from './InputWithValidation/InputWithValidation';
 
 export default function RenderInputs(props: InputProps) {
   const { inputsList, register, errors, controllerHooksForm } = props;
@@ -44,6 +46,11 @@ export default function RenderInputs(props: InputProps) {
     );
   };
 
+  const renderInputWithValidation = (input: verifiedInputType, key: string) =>
+  {
+    return <InputWithValidation input={input} register={register} errors={errors} key={key}/>
+  }
+
   const renderAllInputs = () => {
     return inputsList.map((input, i) => {
       const actualReactKey = reactKeys[i];
@@ -55,6 +62,10 @@ export default function RenderInputs(props: InputProps) {
       if ('mask' in input) {
         return renderMaskedInput(input, actualReactKey);
       }
+
+      if('regex' in input) {
+        return renderInputWithValidation(input, actualReactKey)
+      }      
 
       if (input.inputType === 'textarea') {
         return renderTextareaInput(input, actualReactKey);
