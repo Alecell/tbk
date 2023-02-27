@@ -1,8 +1,9 @@
 import { useForm } from 'react-hook-form';
-import { InputsProps, basicInputType } from '../Types';
+import { InputsProps, basicInputType, maskedInputType } from '../Types';
 import BooleanInput from './Boolean/BooleanInput';
 import BasicInput from './BasicInput/BasicInput';
 import { reactKeys } from '../InputsGeneratorConfig';
+import MaskedInput from './MaskedInput/MaskedInput';
 
 export default function RenderInputs(props: InputsProps) {
   const { inputsList } = props;
@@ -20,9 +21,9 @@ export default function RenderInputs(props: InputsProps) {
     return (<BasicInput {...input} key={key} />);
   };
 
-  const renderMaskedInput = (input: basicInputType, key: string) =>
+  const renderMaskedInput = (input: maskedInputType, key: string) =>
   {
-    
+    return (<MaskedInput {...input} key={key}/>)
   }
 
   const renderAllInputs = () => {
