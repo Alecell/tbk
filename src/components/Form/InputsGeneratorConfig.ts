@@ -25,14 +25,14 @@ const inputList = [
   {
     label: 'CPF',
     inputType: 'text',
-    mask: '999.999.999-99',
-    regex: /\d{3}\.\d{3}\.\d{3}-\d{2}/,
+    mask: '000.000.000-00',
+    regex: /\d{3}\.\d{3}\.\d{3}-\d{2}/g,
     message: 'CPF inválida!',
   },
   {
     label: 'CNPJ',
     inputType: 'text',
-    mask: '99.999.999/9999-99',
+    mask: '00.000.000/0000-00',
     regex: /\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}/,
     message: 'CNPJ inválido!',
   },

@@ -1,16 +1,32 @@
-import { maskedInputType } from 'components/Form/Types';
+import { MaskedInputProps } from 'components/Form/Types';
+import { Controller } from 'react-hook-form';
 import { IMaskInput } from 'react-imask';
 
-export default function MaskedInput(props: maskedInputType, key: string) {
-  let className = 'input ';
-  className += props.className ? props.className : props.label;
+export default function MaskedInput(props: MaskedInputProps) {
+  const { controllerHooksForm } = props;
+
+  const { label, inputType, mask, message, regex, className } = props.input;
+
+  let classCss = 'input ';
+  classCss += className ? className : label;
 
   return (
-    <div className={className} key={key}>
-      <label>{props.label}:</label>
-      <IMaskInput 
-        mask={props.mask}
+    <div className={classCss} key={props.key}>
+      <label>{label}:</label>
+      <Controller
+        control={controllerHooksForm}
+        name={label}
+        render={({
+          field: { onChange, onBlur, value, ref },
+          fieldState: { invalid, isTouched, isDirty, error },
+          formState,
+        }) => <IMaskInput mask={mask} ref={ref} onAccept={(value, mask) => onChange(value)} />}
+        rules={{pattern: {
+          value: regex,
+          message: message
+        }}}
       />
+      {props.errors[label] && <p>erro!</p>}
     </div>
   );
 }
