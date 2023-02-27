@@ -16,11 +16,7 @@ export default function MaskedInput(props: MaskedInputProps) {
       <Controller
         control={controllerHooksForm}
         name={label}
-        render={({
-          field: { onChange, onBlur, value, ref },
-          fieldState: { invalid, isTouched, isDirty, error },
-          formState,
-        }) => <IMaskInput mask={mask} ref={ref} onAccept={(value, mask) => onChange(value)} />}
+        render={({ field }) => <IMaskInput mask={mask} ref={field.ref} onAccept={(value, mask) => field.onChange(value)} />}
         rules={{pattern: {
           value: regex,
           message: message
