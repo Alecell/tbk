@@ -15,7 +15,7 @@ export default function RenderInputs(props: InputProps) {
     return (
       <BooleanInput
         input={input}
-        key={key}
+        reactKey={key}
         register={register}
         errors={errors}
       />
@@ -24,7 +24,7 @@ export default function RenderInputs(props: InputProps) {
 
   const basicInput = (input: basicInputType, key: string) => {
     return (
-      <BasicInput input={input} key={key} register={register} errors={errors} />
+      <BasicInput input={input} reactKey={key} register={register} errors={errors} />
     );
   };
 
@@ -32,7 +32,7 @@ export default function RenderInputs(props: InputProps) {
     return (
       <MaskedInput
         input={input}
-        key={key}
+        reactKey={key}
         register={register}
         errors={errors}
         controllerHooksForm={controllerHooksForm}
@@ -42,13 +42,13 @@ export default function RenderInputs(props: InputProps) {
 
   const renderTextareaInput = (input: basicInputType, key: string) => {
     return (
-      <Textarea input={input} key={key} register={register} errors={errors} />
+      <Textarea input={input} reactKey={key} register={register} errors={errors} />
     );
   };
 
   const renderInputWithValidation = (input: verifiedInputType, key: string) =>
   {
-    return <InputWithValidation input={input} register={register} errors={errors} key={key}/>
+    return <InputWithValidation input={input} register={register} errors={errors} reactKey={key}/>
   }
 
   const renderAllInputs = () => {

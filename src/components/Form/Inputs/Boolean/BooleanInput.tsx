@@ -8,7 +8,7 @@ export default function BooleanInput(props: BasicInputProps) {
   classCss += className ? className : label;
 
   return (
-    <div className={classCss} key={props.key}>
+    <div className={classCss} key={props.reactKey}>
       <label>Boolean:</label>
       <label htmlFor={label} className="switch">
         <input id={label} type="checkbox" {...props.register(label)} />

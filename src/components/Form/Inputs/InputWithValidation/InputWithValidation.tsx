@@ -7,7 +7,7 @@ export default function InputWithValidation(props: VerifiedInputProps) {
   cssClass += className ? className : label;
 
   return (
-    <div className={cssClass} key={props.key}>
+    <div className={cssClass} key={props.reactKey}>
       <label>{label}:</label>
       <div className="input-error_message--container">
         <input

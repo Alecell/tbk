@@ -7,11 +7,13 @@ export default function MaskedInput(props: MaskedInputProps) {
 
   const { label, mask, message, regex, className, scale } = props.input;
 
+  console.log(props.input.uuid)
+
   let classCss = 'input ';
   classCss += className ? className : label;
 
   return (
-    <div className={classCss} key={props.key}>
+    <div className={classCss} key={props.reactKey}>
       <label>{label}:</label>
       <div className='input-error_message--container'>
         <Controller

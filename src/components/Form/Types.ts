@@ -12,6 +12,7 @@ export type basicInputType = {
   maxLength?: number;
   rows?: number;
   cols?: number;
+  uuid?: string;
 };
 
 export type maskedInputType = basicInputType & {
@@ -37,16 +38,16 @@ export type InputProps = hookFormsTypes & {
 
 export type BasicInputProps = {
   input: basicInputType;
-  key: string;
+  reactKey: string;
 } & hookFormsTypes;
 
 export type MaskedInputProps = {
   input: maskedInputType;
-  key: string;
+  reactKey: string;
   controllerHooksForm: Control<FieldValues, any>;
 } & hookFormsTypes;
 
 export type VerifiedInputProps = {
-  key: string;
+  reactKey: string;
   input: verifiedInputType;
 } & hookFormsTypes;

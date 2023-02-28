@@ -7,7 +7,7 @@ export default function BasicInput(props: BasicInputProps) {
   cssClass += className ? className : label;
 
   return (
-    <div className={cssClass} key={props.key}>
+    <div className={cssClass} key={props.reactKey}>
       <label>{label}:</label>
       <input
         type={inputType}

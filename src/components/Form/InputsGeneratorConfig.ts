@@ -21,6 +21,7 @@ const inputList = [
     mask: '00:00:00',
     regex: /[0-2][0-4]:[0-5][0-9](?::[0-5][0-9])?/,
     message: 'Hora inválida',
+    uuid: crypto.randomUUID()
   },
   { label: 'Boolean', inputType: 'boolean' },
   {
@@ -59,5 +60,4 @@ const inputList = [
 ];
 
 const reactKeys = inputList.map(() => crypto.randomUUID());
-
 export { inputList, reactKeys };
