@@ -1,16 +1,8 @@
 import { BasicInputProps } from 'components/Form/Types';
-import {
-  FieldErrors,
-  FieldValues,
-  UseFormRegister,
-  useForm,
-} from 'react-hook-form';
 
-export default function BasicInput(props: BasicInputProps
-) {
+export default function BasicInput(props: BasicInputProps) {
+  const { label, inputType, className, maxLength } = props.input;
 
-  const { label, inputType, className, maxLength, step } = props.input;
-  
   let cssClass = 'input ';
   cssClass += className ? className : label;
 
@@ -19,7 +11,6 @@ export default function BasicInput(props: BasicInputProps
       <label>{label}:</label>
       <input
         type={inputType}
-        step={step}
         maxLength={maxLength}
         {...props.register(label)}
       />

@@ -1,4 +1,4 @@
-import { BasicInputProps, VerifiedInputProps } from 'components/Form/Types';
+import { VerifiedInputProps } from 'components/Form/Types';
 
 export default function InputWithValidation(props: VerifiedInputProps) {
   const { label, inputType, className, regex, message } = props.input;

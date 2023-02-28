@@ -1,15 +1,27 @@
 const inputList = [
-  { label: 'Integer', inputType: 'number' },
+  { label: 'Integer', inputType: 'text', mask: Number, scale: 0 },
   {
     label: 'Double/Float',
     inputType: 'string',
     className: 'doubleFloat',
     mask: Number,
-    scale: 4
+    scale: 4,
   },
   { label: 'String', inputType: 'text' },
-  { label: 'Date', inputType: 'text', mask: '00/00/0000', regex: /\d{2}\/\d{2}\/\d{4}/, message: 'Data inválida' },
-  { label: 'Time', inputType: 'text', mask: '00:00:00', regex: /[0-2][0-4]:[0-5][0-9](?::[0-5][0-9])?/, message: 'Hora inválida'},
+  {
+    label: 'Date',
+    inputType: 'text',
+    mask: '00/00/0000',
+    regex: /\d{2}\/\d{2}\/\d{4}/,
+    message: 'Data inválida',
+  },
+  {
+    label: 'Time',
+    inputType: 'text',
+    mask: '00:00:00',
+    regex: /[0-2][0-4]:[0-5][0-9](?::[0-5][0-9])?/,
+    message: 'Hora inválida',
+  },
   { label: 'Boolean', inputType: 'boolean' },
   {
     label: 'Email',
@@ -43,10 +55,9 @@ const inputList = [
     inputType: 'text',
     className: 'inscricaoEstadual',
   },
-  { label: 'Text', inputType: 'textarea' }
+  { label: 'Text', inputType: 'textarea' },
 ];
 
 const reactKeys = inputList.map(() => crypto.randomUUID());
 
 export { inputList, reactKeys };
-

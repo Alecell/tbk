@@ -2,10 +2,7 @@ import { BasicInputProps } from 'components/Form/Types';
 import './BooleanInput.css';
 
 export default function BooleanInput(props: BasicInputProps) {
-
-  const { label, inputType, className, maxLength, step } = props.input;
-
-
+  const { label, className } = props.input;
 
   let classCss = 'input ';
   classCss += className ? className : label;

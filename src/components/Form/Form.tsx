@@ -1,14 +1,14 @@
 import 'components/Form/Form.css';
 import { inputList } from 'components/Form/InputsGeneratorConfig';
 import RenderInputs from 'components/Form/Inputs/RenderInputs';
-import { Controller, SubmitHandler, useForm } from 'react-hook-form';
+import { SubmitHandler, useForm } from 'react-hook-form';
 
 export default function Form() {
   const {
     handleSubmit,
     register,
     formState: { errors },
-    control
+    control,
   } = useForm();
 
   const onSubmit: SubmitHandler<any> = (data) => console.log(data);

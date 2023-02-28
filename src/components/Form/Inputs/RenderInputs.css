@@ -1,26 +1,89 @@
 .input {
-  margin-bottom: 5px;
   display: flex;
   align-items: center;
+  
+  margin-bottom: 0.35em;
+}
+
+.input input, textarea {
+  border: 1px solid #000;
+  border-radius: 5px;
 }
 
 .input label:first-of-type {
   display: inline-block;
-  width: 150px;
+  width: 9.375em;
+  margin-right: 0.313em;
+  
   text-align: right;
-  margin-right: 5px;
 }
 
-.input-error_message--container
-{
+.input-error_message--container {
   display: flex;
   flex-direction: column;
 }
 
+.input-error_message--container span {
+  font-size: 0.8em;
+}
+
+
 .input input {
-  padding: 3px;
+  padding: 0.3em;
 }
 
 .Text textarea {
   resize: none;
+}
+
+.Text label {
+  align-self: flex-start;
+}
+
+.input span {
+  margin-top: 1px;
+}
+
+/* Color styles */
+
+input:focus {
+  outline: none;
+  border: 2px solid blue;
+}
+
+.input span
+{
+  color: red;
+}
+
+/* Inputs size */
+
+.Integer input,
+.doubleFloat input {
+  text-align: right;
+  width: 6.875em;
+}
+
+.Date input,
+.Time input {
+  width: 5.8em;
+}
+
+.String input,
+.Email input,
+.Url input {
+  width: 16em;
+}
+
+.CPF input, .inscricaoEstadual input {
+  width: 7.5em;
+}
+
+.CNPJ input {
+  width: 10em;
+}
+
+.Text textarea {
+  height: 15.625em;
+  width: 25em;
 }
