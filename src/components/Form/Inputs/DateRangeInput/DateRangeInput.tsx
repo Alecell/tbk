@@ -5,13 +5,15 @@ import { IMaskInput } from 'react-imask';
 export default function DateRangeInput(props: DateRangeInputProps) {
   const { controllerHooksForm } = props;
 
-  const { label, mask, message, regex, className, uuid } = props.input;
+  const { label, mask, message, className, uuid } = props.input;
 
   let classCss = 'input ';
   classCss += className ? className : label;
 
   const convertStringToNumber = (value: string) => {
-    const dateStringWithoutBars = value.split('/').join('');
+    const dateStringWithoutBars = value.split('/').reverse().join('');
+    console.log(dateStringWithoutBars);
+    
     return parseInt(dateStringWithoutBars);
   };
 
@@ -26,7 +28,7 @@ export default function DateRangeInput(props: DateRangeInputProps) {
             <div className='input-date-range--container'>
               <IMaskInput
                 mask={mask}
-                // ref={field.ref}
+                ref={field.ref}
                 value={field.value?.value1}
                 onAccept={(value, mask) =>
                   field.onChange({ ...field.value, value1: value })
@@ -35,7 +37,7 @@ export default function DateRangeInput(props: DateRangeInputProps) {
               <span>-</span>
               <IMaskInput
                 mask={mask}
-                // ref={field.ref}
+                ref={field.ref}
                 value={field.value?.value2}
                 onAccept={(value, mask) =>
                   field.onChange({ ...field.value, value2: value })
