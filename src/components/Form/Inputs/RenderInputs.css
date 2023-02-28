@@ -57,6 +57,11 @@ textarea:focus {
   color: red;
 }
 
+.required input
+{
+  border: 1px solid red;
+}
+
 /* Inputs size */
 
 .Integer input,
@@ -88,7 +93,7 @@ textarea:focus {
 
 .CPF input,
 .inscricaoEstadual input {
-  width: 7.5em;
+  width: 8.5em;
 }
 
 .CNPJ input {

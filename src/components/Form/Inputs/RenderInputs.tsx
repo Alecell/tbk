@@ -12,11 +12,25 @@ export default function RenderInputs(props: RenderInputsProps) {
   const { inputsList, register, errors, controllerHooksForm, getValues } = props;
 
   const renderBooleanInput = (input: basicInputType) => {
-    return <BooleanInput input={input} register={register} errors={errors} />;
+    return (
+      <BooleanInput
+        input={input}
+        register={register}
+        errors={errors}
+        key={input.uuid}
+      />
+    );
   };
 
   const basicInput = (input: basicInputType) => {
-    return <BasicInput input={input} register={register} errors={errors} />;
+    return (
+      <BasicInput
+        input={input}
+        register={register}
+        errors={errors}
+        key={input.uuid}
+      />
+    );
   };
 
   const renderMaskedInput = (input: maskedInputType) => {
@@ -26,17 +40,30 @@ export default function RenderInputs(props: RenderInputsProps) {
         register={register}
         errors={errors}
         controllerHooksForm={controllerHooksForm}
+        key={input.uuid}
       />
     );
   };
 
   const renderTextareaInput = (input: basicInputType) => {
-    return <Textarea input={input} register={register} errors={errors} />;
+    return (
+      <Textarea
+        input={input}
+        register={register}
+        errors={errors}
+        key={input.uuid}
+      />
+    );
   };
 
   const renderInputWithValidation = (input: verifiedInputType) => {
     return (
-      <InputWithValidation input={input} register={register} errors={errors} />
+      <InputWithValidation
+        input={input}
+        register={register}
+        errors={errors}
+        key={input.uuid}
+      />
     );
   };
 
@@ -48,6 +75,7 @@ export default function RenderInputs(props: RenderInputsProps) {
         errors={errors}
         controllerHooksForm={controllerHooksForm}
         getValues={getValues}
+        key={input.uuid}
       />
     );
   };

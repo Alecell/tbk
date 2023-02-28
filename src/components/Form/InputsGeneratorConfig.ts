@@ -14,7 +14,7 @@ const inputList = [
     scale: 4,
     uuid: crypto.randomUUID(),
   },
-  { label: 'String', inputType: 'text', uuid: crypto.randomUUID() },
+  { label: 'String', inputType: 'text', uuid: crypto.randomUUID(), required: 'Campo obrigatório!' },
   {
     label: 'Date',
     inputType: 'text',
@@ -72,6 +72,7 @@ const inputList = [
     regex: /\d{3}\.\d{3}\.\d{3}-\d{2}/,
     message: 'CPF inválido!',
     uuid: crypto.randomUUID(),
+    required: 'Campo obrigátorio!'
   },
   {
     label: 'CNPJ',

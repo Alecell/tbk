@@ -1,10 +1,11 @@
 import { VerifiedInputProps } from 'components/Form/Types';
 
 export default function InputWithValidation(props: VerifiedInputProps) {
-  const { label, inputType, className, regex, message, uuid } = props.input;
+  const { label, inputType, className, regex, message, uuid, required } = props.input;
 
   let cssClass = 'input ';
   cssClass += className ? className : label;
+  cssClass += required ? ' required' : '';
 
   return (
     <div className={cssClass} key={uuid}>

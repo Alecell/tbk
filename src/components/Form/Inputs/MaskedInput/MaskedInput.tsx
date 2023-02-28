@@ -5,13 +5,14 @@ import { IMaskInput } from 'react-imask';
 export default function MaskedInput(props: MaskedInputProps) {
   const { controllerHooksForm } = props;
 
-  const { label, mask, message, regex, className, scale, uuid } = props.input;
+  const { label, mask, message, regex, className, scale, uuid, required } = props.input;
 
-  let classCss = 'input ';
-  classCss += className ? className : label;
+  let cssClass = 'input ';
+  cssClass += className ? className : label;
+  cssClass += required ? ' required' : '';
 
   return (
-    <div className={classCss} key={uuid}>
+    <div className={cssClass} key={uuid}>
       <label>{label}:</label>
       <div className="input-error_message--container">
         <Controller
@@ -33,9 +34,10 @@ export default function MaskedInput(props: MaskedInputProps) {
               value: regex,
               message: message,
             },
+            required: required
           }}
         />
-        {props.errors[label] && <span>{message}</span>}
+        {props.errors[label] && <span>{`${props.errors[label]?.message}`}</span>}
       </div>
     </div>
   );

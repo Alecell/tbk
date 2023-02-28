@@ -12,7 +12,7 @@ export type basicInputType = {
   label: string;
   inputType: string;
   uuid: string;
-  required?: boolean;
+  required?: boolean | string;
   className?: string;
   maxLength?: number;
   rows?: number;
