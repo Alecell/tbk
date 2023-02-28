@@ -24,7 +24,6 @@ export default function MaskedInput(props: MaskedInputProps) {
           }) => (
             <IMaskInput
               mask={mask}
-              ref={ref}
               onAccept={(value, mask) => onChange(value)}
               scale={scale}
             />
