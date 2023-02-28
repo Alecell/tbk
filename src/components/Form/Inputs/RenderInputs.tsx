@@ -1,7 +1,6 @@
 import { InputProps, basicInputType, maskedInputType } from '../Types';
 import BooleanInput from './Boolean/BooleanInput';
 import BasicInput from './BasicInput/BasicInput';
-import { reactKeys } from '../InputsGeneratorConfig';
 import MaskedInput from './MaskedInput/MaskedInput';
 import Textarea from './Textarea/Textarea';
 import './RenderInputs.css';
@@ -11,28 +10,26 @@ import InputWithValidation from './InputWithValidation/InputWithValidation';
 export default function RenderInputs(props: InputProps) {
   const { inputsList, register, errors, controllerHooksForm } = props;
 
-  const renderBooleanInput = (input: basicInputType, key: string) => {
+  const renderBooleanInput = (input: basicInputType) => {
     return (
       <BooleanInput
         input={input}
-        reactKey={key}
         register={register}
         errors={errors}
       />
     );
   };
 
-  const basicInput = (input: basicInputType, key: string) => {
+  const basicInput = (input: basicInputType) => {
     return (
-      <BasicInput input={input} reactKey={key} register={register} errors={errors} />
+      <BasicInput input={input} register={register} errors={errors} />
     );
   };
 
-  const renderMaskedInput = (input: maskedInputType, key: string) => {
+  const renderMaskedInput = (input: maskedInputType) => {
     return (
       <MaskedInput
         input={input}
-        reactKey={key}
         register={register}
         errors={errors}
         controllerHooksForm={controllerHooksForm}
@@ -40,38 +37,37 @@ export default function RenderInputs(props: InputProps) {
     );
   };
 
-  const renderTextareaInput = (input: basicInputType, key: string) => {
+  const renderTextareaInput = (input: basicInputType) => {
     return (
-      <Textarea input={input} reactKey={key} register={register} errors={errors} />
+      <Textarea input={input} register={register} errors={errors} />
     );
   };
 
-  const renderInputWithValidation = (input: verifiedInputType, key: string) =>
+  const renderInputWithValidation = (input: verifiedInputType) =>
   {
-    return <InputWithValidation input={input} register={register} errors={errors} reactKey={key}/>
+    return <InputWithValidation input={input} register={register} errors={errors} />
   }
 
   const renderAllInputs = () => {
-    return inputsList.map((input, i) => {
-      const actualReactKey = reactKeys[i];
+    return inputsList.map((input) => {
 
       if (input.inputType === 'boolean') {
-        return renderBooleanInput(input, actualReactKey);
+        return renderBooleanInput(input);
       }
 
       if ('mask' in input) {
-        return renderMaskedInput(input, actualReactKey);
+        return renderMaskedInput(input);
       }
 
       if('regex' in input) {
-        return renderInputWithValidation(input, actualReactKey)
+        return renderInputWithValidation(input)
       }      
 
       if (input.inputType === 'textarea') {
-        return renderTextareaInput(input, actualReactKey);
+        return renderTextareaInput(input);
       }
 
-      return basicInput(input, actualReactKey);
+      return basicInput(input);
     });
   };
 

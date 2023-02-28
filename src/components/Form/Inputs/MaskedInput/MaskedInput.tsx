@@ -5,15 +5,15 @@ import { IMaskInput } from 'react-imask';
 export default function MaskedInput(props: MaskedInputProps) {
   const { controllerHooksForm } = props;
 
-  const { label, mask, message, regex, className, scale } = props.input;
-
-  console.log(props.input.uuid)
+  const { label, mask, message, regex, className, scale, uuid } = props.input;
 
   let classCss = 'input ';
   classCss += className ? className : label;
 
+  console.log(label, uuid)
+
   return (
-    <div className={classCss} key={props.reactKey}>
+    <div className={classCss} key={uuid}>
       <label>{label}:</label>
       <div className='input-error_message--container'>
         <Controller

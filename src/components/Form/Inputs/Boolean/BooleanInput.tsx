@@ -2,13 +2,13 @@ import { BasicInputProps } from 'components/Form/Types';
 import './BooleanInput.css';
 
 export default function BooleanInput(props: BasicInputProps) {
-  const { label, className } = props.input;
+  const { label, className, uuid } = props.input;
 
   let classCss = 'input ';
   classCss += className ? className : label;
 
   return (
-    <div className={classCss} key={props.reactKey}>
+    <div className={classCss} key={uuid}>
       <label>Boolean:</label>
       <label htmlFor={label} className="switch">
         <input id={label} type="checkbox" {...props.register(label)} />

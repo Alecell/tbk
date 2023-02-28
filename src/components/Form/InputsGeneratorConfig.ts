@@ -1,19 +1,27 @@
 const inputList = [
-  { label: 'Integer', inputType: 'text', mask: Number, scale: 0 },
+  {
+    label: 'Integer',
+    inputType: 'text',
+    mask: Number,
+    scale: 0,
+    uuid: crypto.randomUUID(),
+  },
   {
     label: 'Double/Float',
     inputType: 'string',
     className: 'doubleFloat',
     mask: Number,
     scale: 4,
+    uuid: crypto.randomUUID(),
   },
-  { label: 'String', inputType: 'text' },
+  { label: 'String', inputType: 'text', uuid: crypto.randomUUID() },
   {
     label: 'Date',
     inputType: 'text',
     mask: '00/00/0000',
     regex: /\d{2}\/\d{2}\/\d{4}/,
     message: 'Data inválida',
+    uuid: crypto.randomUUID(),
   },
   {
     label: 'Time',
@@ -21,21 +29,23 @@ const inputList = [
     mask: '00:00:00',
     regex: /[0-2][0-4]:[0-5][0-9](?::[0-5][0-9])?/,
     message: 'Hora inválida',
-    uuid: crypto.randomUUID()
+    uuid: crypto.randomUUID(),
   },
-  { label: 'Boolean', inputType: 'boolean' },
+  { label: 'Boolean', inputType: 'boolean', uuid: crypto.randomUUID() },
   {
     label: 'Email',
     inputType: 'text',
     maxLength: 100,
     regex: /\w+@[a-zA-Z]+\.com(?:\.br)?/,
     message: 'Email inválido',
+    uuid: crypto.randomUUID(),
   },
   {
     label: 'Url',
     inputType: 'text',
     regex: /(?:https?:\/\/)?(?:\w{3}\.)?\w+(?:\.com|\.com\.br|.net)/,
     message: 'Url invalido',
+    uuid: crypto.randomUUID(),
   },
   {
     label: 'CPF',
@@ -43,6 +53,7 @@ const inputList = [
     mask: '000.000.000-00',
     regex: /\d{3}\.\d{3}\.\d{3}-\d{2}/,
     message: 'CPF inválido!',
+    uuid: crypto.randomUUID(),
   },
   {
     label: 'CNPJ',
@@ -50,14 +61,16 @@ const inputList = [
     mask: '00.000.000/0000-00',
     regex: /\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}/,
     message: 'CNPJ inválido!',
+    uuid: crypto.randomUUID(),
   },
   {
     label: 'Inscrição Estadual',
     inputType: 'text',
     className: 'inscricaoEstadual',
+    uuid: crypto.randomUUID(),
   },
-  { label: 'Text', inputType: 'textarea' },
+  { label: 'Text', inputType: 'textarea', uuid: crypto.randomUUID() },
 ];
 
-const reactKeys = inputList.map(() => crypto.randomUUID());
-export { inputList, reactKeys };
+//const reactKeys = inputList.map(() => crypto.randomUUID());
+export { inputList };
