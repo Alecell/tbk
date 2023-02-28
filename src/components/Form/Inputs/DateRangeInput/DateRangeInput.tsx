@@ -11,7 +11,7 @@ export default function DateRangeInput(props: DateRangeInputProps) {
   classCss += className ? className : label;
 
   const convertStringToNumber = (value: string) => {
-    const dateStringWithoutBars = value.split('/').reverse().join('');
+    const dateStringWithoutBars = value?.split('/').reverse().join('');
 
     return parseInt(dateStringWithoutBars);
   };
@@ -27,7 +27,9 @@ export default function DateRangeInput(props: DateRangeInputProps) {
             <div className="input-date-range--container">
               <IMaskInput
                 mask={mask}
-                ref={field.ref}
+                inputRef={(ref) => {
+                  field.ref(ref)
+                }}
                 value={field.value?.value1}
                 onAccept={(value, mask) =>
                   field.onChange({ ...field.value, value1: value })
@@ -36,7 +38,9 @@ export default function DateRangeInput(props: DateRangeInputProps) {
               <span>-</span>
               <IMaskInput
                 mask={mask}
-                ref={field.ref}
+                inputRef={(ref) => {
+                  field.ref(ref);
+                }}
                 value={field.value?.value2}
                 onAccept={(value, mask) =>
                   field.onChange({ ...field.value, value2: value })
@@ -45,14 +49,13 @@ export default function DateRangeInput(props: DateRangeInputProps) {
             </div>
           )}
           rules={{
-            validate: async () => {
+            validate: () => {
               const date1 = convertStringToNumber(
-                await props.getValues('dateRange').value1
+                props.getValues('dateRange')?.value1
               );
               const date2 = convertStringToNumber(
-                await props.getValues('dateRange').value2
+                props.getValues('dateRange')?.value2
               );
-
               return date2 >= date1 || 'erro!';
             },
           }}
