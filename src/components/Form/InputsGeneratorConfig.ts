@@ -24,6 +24,15 @@ const inputList = [
     uuid: crypto.randomUUID(),
   },
   {
+    label: 'Month/Year',
+    inputType: 'text',
+    className: 'MonthYear',
+    mask: '00/0000',
+    regex: /\d{2}\/\d{4}/,
+    message: 'Data inválida',
+    uuid: crypto.randomUUID(),
+  },
+  {
     label: 'Time',
     inputType: 'text',
     mask: '00:00:00',

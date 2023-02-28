@@ -8,11 +8,12 @@ import {
 export type basicInputType = {
   label: string;
   inputType: string;
+  uuid: string;
+  required?: boolean;
   className?: string;
   maxLength?: number;
   rows?: number;
   cols?: number;
-  uuid: string;
 };
 
 export type maskedInputType = basicInputType & {
@@ -31,7 +32,7 @@ export type verifiedInputType = basicInputType &
   Omit<maskedInputType, 'mask'> &
   hookFormsTypes;
 
-export type InputProps = hookFormsTypes & {
+export type RenderInputsProps = hookFormsTypes & {
   inputsList: basicInputType[] | maskedInputType[] | verifiedInputType[];
   controllerHooksForm: Control<FieldValues, any>;
 };
