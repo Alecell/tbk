@@ -12,8 +12,7 @@ export default function DateRangeInput(props: DateRangeInputProps) {
 
   const convertStringToNumber = (value: string) => {
     const dateStringWithoutBars = value.split('/').reverse().join('');
-    console.log(dateStringWithoutBars);
-    
+
     return parseInt(dateStringWithoutBars);
   };
 
@@ -25,7 +24,7 @@ export default function DateRangeInput(props: DateRangeInputProps) {
           control={controllerHooksForm}
           name={className || ''}
           render={({ field }) => (
-            <div className='input-date-range--container'>
+            <div className="input-date-range--container">
               <IMaskInput
                 mask={mask}
                 ref={field.ref}
@@ -33,7 +32,7 @@ export default function DateRangeInput(props: DateRangeInputProps) {
                 onAccept={(value, mask) =>
                   field.onChange({ ...field.value, value1: value })
                 }
-              /> 
+              />
               <span>-</span>
               <IMaskInput
                 mask={mask}
@@ -53,12 +52,12 @@ export default function DateRangeInput(props: DateRangeInputProps) {
               const date2 = convertStringToNumber(
                 await props.getValues('dateRange').value2
               );
-  
-              return date2 >= date1 || 'erro!'
+
+              return date2 >= date1 || 'erro!';
             },
           }}
         />
-        
+
         {props.errors?.dateRange && <span>{message}</span>}
       </div>
     </div>
