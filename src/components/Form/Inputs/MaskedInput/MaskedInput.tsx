@@ -10,12 +10,10 @@ export default function MaskedInput(props: MaskedInputProps) {
   let classCss = 'input ';
   classCss += className ? className : label;
 
-  console.log(label, uuid)
-
   return (
     <div className={classCss} key={uuid}>
       <label>{label}:</label>
-      <div className='input-error_message--container'>
+      <div className="input-error_message--container">
         <Controller
           control={controllerHooksForm}
           name={label}

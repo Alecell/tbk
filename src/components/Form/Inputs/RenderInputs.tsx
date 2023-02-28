@@ -1,4 +1,4 @@
-import { InputProps, basicInputType, maskedInputType } from '../Types';
+import { RenderInputsProps, basicInputType, maskedInputType } from '../Types';
 import BooleanInput from './Boolean/BooleanInput';
 import BasicInput from './BasicInput/BasicInput';
 import MaskedInput from './MaskedInput/MaskedInput';
@@ -7,7 +7,7 @@ import './RenderInputs.css';
 import { verifiedInputType } from '../Types';
 import InputWithValidation from './InputWithValidation/InputWithValidation';
 
-export default function RenderInputs(props: InputProps) {
+export default function RenderInputs(props: RenderInputsProps) {
   const { inputsList, register, errors, controllerHooksForm } = props;
 
   const renderBooleanInput = (input: basicInputType) => {
