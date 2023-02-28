@@ -6,24 +6,17 @@ import Textarea from './Textarea/Textarea';
 import './RenderInputs.css';
 import { verifiedInputType } from '../Types';
 import InputWithValidation from './InputWithValidation/InputWithValidation';
+import DateRangeInput from './DateRangeInput/DateRangeInput';
 
 export default function RenderInputs(props: RenderInputsProps) {
-  const { inputsList, register, errors, controllerHooksForm } = props;
+  const { inputsList, register, errors, controllerHooksForm, getValues } = props;
 
   const renderBooleanInput = (input: basicInputType) => {
-    return (
-      <BooleanInput
-        input={input}
-        register={register}
-        errors={errors}
-      />
-    );
+    return <BooleanInput input={input} register={register} errors={errors} />;
   };
 
   const basicInput = (input: basicInputType) => {
-    return (
-      <BasicInput input={input} register={register} errors={errors} />
-    );
+    return <BasicInput input={input} register={register} errors={errors} />;
   };
 
   const renderMaskedInput = (input: maskedInputType) => {
@@ -38,30 +31,44 @@ export default function RenderInputs(props: RenderInputsProps) {
   };
 
   const renderTextareaInput = (input: basicInputType) => {
+    return <Textarea input={input} register={register} errors={errors} />;
+  };
+
+  const renderInputWithValidation = (input: verifiedInputType) => {
     return (
-      <Textarea input={input} register={register} errors={errors} />
+      <InputWithValidation input={input} register={register} errors={errors} />
     );
   };
 
-  const renderInputWithValidation = (input: verifiedInputType) =>
-  {
-    return <InputWithValidation input={input} register={register} errors={errors} />
-  }
+  const renderDateRangeInput = (input: maskedInputType) => {
+    return (
+      <DateRangeInput
+        input={input}
+        register={register}
+        errors={errors}
+        controllerHooksForm={controllerHooksForm}
+        getValues={getValues}
+      />
+    );
+  };
 
   const renderAllInputs = () => {
     return inputsList.map((input) => {
-
       if (input.inputType === 'boolean') {
         return renderBooleanInput(input);
+      }
+
+      if ('mask' in input && input.inputType === 'dateRange') {
+        return renderDateRangeInput(input);
       }
 
       if ('mask' in input) {
         return renderMaskedInput(input);
       }
 
-      if('regex' in input) {
-        return renderInputWithValidation(input)
-      }      
+      if ('regex' in input) {
+        return renderInputWithValidation(input);
+      }
 
       if (input.inputType === 'textarea') {
         return renderTextareaInput(input);

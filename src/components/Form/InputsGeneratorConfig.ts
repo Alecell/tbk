@@ -24,6 +24,15 @@ const inputList = [
     uuid: crypto.randomUUID(),
   },
   {
+    label: 'Date Range',
+    inputType: 'dateRange',
+    className: 'dateRange',
+    message: 'Data inválida! A data inicial não pode ser maior que a final',
+    regex: /\d{2}\/\d{2}\/\d{4}/,
+    mask: '00/00/0000',
+    uuid: crypto.randomUUID()
+  },
+  {
     label: 'Month/Year',
     inputType: 'text',
     className: 'MonthYear',

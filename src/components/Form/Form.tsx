@@ -9,6 +9,7 @@ export default function Form() {
     register,
     formState: { errors },
     control,
+    getValues
   } = useForm();
 
   const onSubmit: SubmitHandler<any> = (data) => console.log(data);
@@ -20,6 +21,7 @@ export default function Form() {
         register={register}
         errors={errors}
         controllerHooksForm={control}
+        getValues={getValues}
       />
       <input type="submit" />
     </form>
