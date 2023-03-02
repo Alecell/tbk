@@ -1,0 +1,134 @@
+@media (max-width: 325px) {
+  .Form {
+    height: 100vh;
+    padding-top: 1.2em;
+  }
+
+  .input {
+    margin-bottom: 0.5em;
+  }
+
+  .input input {
+    font-size: 1em;
+  }
+
+  .input label:first-of-type {
+    display: inline-block;
+    max-width: 6em;
+    font-size: 1.2em;
+  }
+
+  .String input,
+  .Email input,
+  .Url input {
+    width: 10em;
+  }
+
+  .Text textarea {
+    font-size: 1.2em;
+    width: 9.5em;
+  }
+
+  .input-error_message--container span {
+    font-size: 0.9em;
+    font-weight: bold;
+  }
+
+  .dateRange .input-error_message--container span {
+    width: 8em;
+  }
+}
+
+@media (max-width: 375px)
+{
+  .Form {
+    height: 100vh;
+    padding-top: 1.2em;
+  }
+
+  .input {
+    margin-bottom: 0.5em;
+  }
+
+  .input input {
+    font-size: 1em;
+  }
+
+  .input label:first-of-type {
+    display: inline-block;
+    max-width: 6em;
+    font-size: 1.2em;
+  }
+
+  .String input,
+  .Email input,
+  .Url input {
+    width: 12em;
+  }
+
+  .CNPJ .input-error_message--container input
+  {
+    width: 11em;
+  }
+
+  .Text textarea {
+    font-size: 1.2em;
+    width: 12em;
+  }
+
+  .input-error_message--container span {
+    font-size: 0.9em;
+    font-weight: bold;
+  }
+
+  .dateRange .input-error_message--container span {
+    width: 17em;
+  }
+}
+
+@media (max-width: 425px)
+{
+  .Form {
+    height: 100vh;
+    padding-top: 1.2em;
+  }
+
+  .input {
+    margin-bottom: 0.5em;
+  }
+
+  .input input {
+    font-size: 1em;
+  }
+
+  .input label:first-of-type {
+    display: inline-block;
+    max-width: 6em;
+    font-size: 1.2em;
+  }
+
+  .String input,
+  .Email input,
+  .Url input {
+    width: 12em;
+  }
+
+  .CNPJ .input-error_message--container input
+  {
+    width: 11em;
+  }
+
+  .Text textarea {
+    font-size: 1.2em;
+    width: 14em;
+  }
+
+  .input-error_message--container span {
+    font-size: 0.9em;
+    font-weight: bold;
+  }
+
+  .dateRange .input-error_message--container span {
+    width: 17em;
+  }
+}

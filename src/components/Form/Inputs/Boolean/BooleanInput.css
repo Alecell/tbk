@@ -56,3 +56,22 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+@media (max-width: 320em)
+{
+   .switch
+   {
+    width: 4em;
+    height: 2.2em;
+   }
+
+   .slider:before {
+    height: 1.40em;
+    width: 1.3em;
+    left: 0.25em;
+    bottom: 0.40em;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+}

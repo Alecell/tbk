@@ -1,15 +1,17 @@
-import { RenderInputsProps, basicInputType, maskedInputType } from '../Types';
-import BooleanInput from './Boolean/BooleanInput';
-import BasicInput from './BasicInput/BasicInput';
-import MaskedInput from './MaskedInput/MaskedInput';
-import Textarea from './Textarea/Textarea';
 import './RenderInputs.css';
+import './MediaQueriesInputs.css';
+import Textarea from './Textarea/Textarea';
 import { verifiedInputType } from '../Types';
-import InputWithValidation from './InputWithValidation/InputWithValidation';
+import BasicInput from './BasicInput/BasicInput';
+import BooleanInput from './Boolean/BooleanInput';
+import MaskedInput from './MaskedInput/MaskedInput';
 import DateRangeInput from './DateRangeInput/DateRangeInput';
+import InputWithValidation from './InputWithValidation/InputWithValidation';
+import { RenderInputsProps, basicInputType, maskedInputType } from '../Types';
 
 export default function RenderInputs(props: RenderInputsProps) {
-  const { inputsList, register, errors, controllerHooksForm, getValues } = props;
+  const { inputsList, register, errors, controllerHooksForm, getValues } =
+    props;
 
   const renderBooleanInput = (input: basicInputType) => {
     return (

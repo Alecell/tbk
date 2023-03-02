@@ -61,7 +61,7 @@ const inputList = [
   {
     label: 'Url',
     inputType: 'text',
-    regex: /(?:https?:\/\/)?(?:\w{3}\.)?\w+(?:\.com|\.com\.br|.net)/,
+    regex: /(?:https?:\/\/)?(?:\w{3}\.)?\w+(?:\.com\.br|\.com|\.br|\.net):?(?:6553[0-5]|655[0-3][0-5]|65[0-5][0-3][0-5]|6[0-5][0-3][0-5]|[1][0-5]?[0-5]?[0-3]?[0-5]?)?$/,
     message: 'Url invalido',
     uuid: crypto.randomUUID(),
   },

@@ -11,7 +11,6 @@ export default function DateRangeInput(props: DateRangeInputProps) {
   classCss += className ? className : label;
   classCss += required ? ' required' : '';
 
-
   const convertStringToNumber = (value: string) => {
     const dateStringWithoutBars = value?.split('/').reverse().join('');
 
@@ -30,14 +29,13 @@ export default function DateRangeInput(props: DateRangeInputProps) {
               <IMaskInput
                 mask={mask}
                 inputRef={(ref) => {
-                  field.ref(ref)
+                  field.ref(ref);
                 }}
-                
                 onAccept={(value, mask) =>
                   field.onChange({ ...field.value, value1: value })
                 }
               />
-              <span>-</span>
+              <span>a</span>
               <IMaskInput
                 mask={mask}
                 inputRef={(ref) => {
@@ -57,13 +55,15 @@ export default function DateRangeInput(props: DateRangeInputProps) {
               const date2 = convertStringToNumber(
                 props.getValues('dateRange')?.value2
               );
-              if(!date1 && !date2) return;
+              if (!date1 && !date2) return;
               return date2 >= date1 || message;
             },
           }}
         />
 
-        {props.errors?.dateRange && <span>{`${props.errors?.dateRange?.message}`}</span>}
+        {props.errors?.dateRange && (
+          <span>{`${props.errors?.dateRange?.message}`}</span>
+        )}
       </div>
     </div>
   );
