@@ -1,4 +1,4 @@
-@media (max-width: 325px) {
+@media screen and (max-width: 374px) {
   .Form {
     height: 100vh;
     padding-top: 1.2em;
@@ -34,12 +34,17 @@
     font-weight: bold;
   }
 
+  .dateRange input
+  {
+    width: 5em;
+  }
+
   .dateRange .input-error_message--container span {
     width: 8em;
   }
 }
 
-@media (max-width: 375px)
+@media screen and (min-width: 375px) and (max-width: 424px)
 {
   .Form {
     height: 100vh;
@@ -86,7 +91,7 @@
   }
 }
 
-@media (max-width: 425px)
+@media screen and (min-width: 425px) and (max-width: 560px)
 {
   .Form {
     height: 100vh;
