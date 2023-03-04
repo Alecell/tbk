@@ -91,5 +91,4 @@ const inputList = [
   { label: 'Text', inputType: 'textarea', uuid: crypto.randomUUID() },
 ];
 
-//const reactKeys = inputList.map(() => crypto.randomUUID());
 export { inputList };
