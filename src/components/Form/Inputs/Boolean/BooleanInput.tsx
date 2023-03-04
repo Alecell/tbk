@@ -1,5 +1,5 @@
 import { BasicInputProps } from 'components/Form/Types';
-import './BooleanInput.css';
+import './BooleanInput.scss';
 
 export default function BooleanInput(props: BasicInputProps) {
   const { label, className, uuid } = props.input;

@@ -1,5 +1,5 @@
-import './RenderInputs.css';
-import './MediaQueriesInputs.css';
+import './RenderInputs.scss';
+import './MediaQueriesInputs.scss';
 import Textarea from './Textarea/Textarea';
 import { verifiedInputType } from '../Types';
 import BasicInput from './BasicInput/BasicInput';
