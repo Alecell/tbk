@@ -88,7 +88,7 @@ export default function RenderInputs(props: RenderInputsProps) {
         return renderBooleanInput(input);
       }
 
-      if ('mask' in input && input.inputType === 'dateRange') {
+      if ('mask' in input && input.inputType === 'DateRange') {
         return renderDateRangeInput(input);
       }
 

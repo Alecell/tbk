@@ -1,23 +1,23 @@
 const inputList = [
   {
     label: 'Integer',
-    inputType: 'text',
+    inputType: 'Integer',
     mask: Number,
     scale: 0,
     uuid: crypto.randomUUID(),
   },
   {
     label: 'Double/Float',
-    inputType: 'string',
+    inputType: 'String',
     className: 'doubleFloat',
     mask: Number,
     scale: 4,
     uuid: crypto.randomUUID(),
   },
-  { label: 'String', inputType: 'text', uuid: crypto.randomUUID(), required: 'Campo obrigatório!' },
+  { label: 'String', inputType: 'String', uuid: crypto.randomUUID(), required: 'Campo obrigatório!' },
   {
     label: 'Date',
-    inputType: 'text',
+    inputType: 'Date',
     mask: '00/00/0000',
     regex: /\d{2}\/\d{2}\/\d{4}/,
     message: 'Data inválida',
@@ -25,8 +25,7 @@ const inputList = [
   },
   {
     label: 'Date Range',
-    inputType: 'dateRange',
-    className: 'dateRange',
+    inputType: 'DateRange',
     message: 'Data inválida! A data inicial não pode ser maior que a final',
     regex: /\d{2}\/\d{2}\/\d{4}/,
     mask: '00/00/0000',
@@ -34,8 +33,7 @@ const inputList = [
   },
   {
     label: 'Month/Year',
-    inputType: 'text',
-    className: 'MonthYear',
+    inputType: 'MonthYear',
     mask: '00/0000',
     regex: /\d{2}\/\d{4}/,
     message: 'Data inválida',
@@ -43,7 +41,7 @@ const inputList = [
   },
   {
     label: 'Time',
-    inputType: 'text',
+    inputType: 'Time',
     mask: '00:00:00',
     regex: /[0-2][0-4]:[0-5][0-9](?::[0-5][0-9])?/,
     message: 'Hora inválida',
@@ -52,7 +50,7 @@ const inputList = [
   { label: 'Boolean', inputType: 'boolean', uuid: crypto.randomUUID() },
   {
     label: 'Email',
-    inputType: 'text',
+    inputType: 'Email',
     maxLength: 100,
     regex: /\w+@[a-zA-Z]+\.com(?:\.br)?/,
     message: 'Email inválido',
@@ -60,14 +58,14 @@ const inputList = [
   },
   {
     label: 'Url',
-    inputType: 'text',
+    inputType: 'Url',
     regex: /(?:https?:\/\/)?(?:\w{3}\.)?\w+(?:\.com\.br|\.com|\.br|\.net):?(?:6553[0-5]|655[0-3][0-5]|65[0-5][0-3][0-5]|6[0-5][0-3][0-5]|[1][0-5]?[0-5]?[0-3]?[0-5]?)?$/,
     message: 'Url invalido',
     uuid: crypto.randomUUID(),
   },
   {
     label: 'CPF',
-    inputType: 'text',
+    inputType: 'CPF',
     mask: '000.000.000-00',
     regex: /\d{3}\.\d{3}\.\d{3}-\d{2}/,
     message: 'CPF inválido!',
@@ -76,7 +74,7 @@ const inputList = [
   },
   {
     label: 'CNPJ',
-    inputType: 'text',
+    inputType: 'CNPJ',
     mask: '00.000.000/0000-00',
     regex: /\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}/,
     message: 'CNPJ inválido!',
@@ -84,8 +82,7 @@ const inputList = [
   },
   {
     label: 'Inscrição Estadual',
-    inputType: 'text',
-    className: 'inscricaoEstadual',
+    inputType: 'InscricaoEstadual',
     uuid: crypto.randomUUID(),
   },
   { label: 'Text', inputType: 'textarea', uuid: crypto.randomUUID() },

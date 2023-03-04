@@ -5,10 +5,10 @@ import { IMaskInput } from 'react-imask';
 export default function MaskedInput(props: MaskedInputProps) {
   const { controllerHooksForm } = props;
 
-  const { label, mask, message, regex, className, scale, uuid, required } = props.input;
+  const { label, mask, message, regex, className, scale, uuid, required, inputType } = props.input;
 
   let cssClass = 'input ';
-  cssClass += className ? className : label;
+  cssClass += className ? className : inputType;
   cssClass += required ? ' required' : '';
 
   return (

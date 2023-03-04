@@ -4,7 +4,7 @@ export default function InputWithValidation(props: VerifiedInputProps) {
   const { label, inputType, className, regex, message, uuid, required } = props.input;
 
   let cssClass = 'input ';
-  cssClass += className ? className : label;
+  cssClass += className ? className : inputType;
   cssClass += required ? ' required' : '';
 
   return (

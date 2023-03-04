@@ -5,10 +5,10 @@ import { IMaskInput } from 'react-imask';
 export default function DateRangeInput(props: DateRangeInputProps) {
   const { controllerHooksForm } = props;
 
-  const { label, mask, message, className, uuid, required } = props.input;
+  const { label, inputType, mask, message, className, uuid, required } = props.input;
 
   let classCss = 'input ';
-  classCss += className ? className : label;
+  classCss += className ? className : inputType;
   classCss += required ? ' required' : '';
 
   const convertStringToNumber = (value: string) => {

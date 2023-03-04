@@ -5,7 +5,7 @@ export default function BasicInput(props: BasicInputProps) {
     props.input;
 
   let cssClass = 'input ';
-  cssClass += className ? className : label;
+  cssClass += className ? className : inputType;
   cssClass += required ? ' required' : '';
 
   return (
