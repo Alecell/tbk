@@ -4,7 +4,7 @@ import { IntegerInputProps } from 'components/Form/Types';
 
 export default function IntegerInput(props: IntegerInputProps) {
   const { controllerHooksForm, errors } = props;
-  const { label, className, mask, message, regex, required } =
+  const { label, className, mask, required } =
     props.input;
 
   let cssClass = 'input Integer ';
@@ -29,10 +29,6 @@ export default function IntegerInput(props: IntegerInputProps) {
             />
           )}
           rules={{
-            pattern: {
-              value: regex,
-              message: message,
-            },
             required: required,
           }}
         />
