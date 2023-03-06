@@ -23,45 +23,45 @@ export default function RenderInputs(props: RenderInputsProps) {
 
   const renderAllInputs = () => {
     return inputsList.map((input) => {
-
-      if(input.inputType === 'Integer')
+      
+      if('mask' in input && input.inputType === 'Integer')
       {
         return <IntegerInput input={input} controllerHooksForm={controllerHooksForm} register={register} errors={errors} />
       }
 
-      if(input.inputType === "Double/Float")
+      if('scale' in input && input.inputType === "Double/Float")
       {
         return <DoubleFloatInput input={input} key={input.reactKey} controllerHooksForm={controllerHooksForm} register={register} errors={errors}/>
       }
       
       if(input.inputType === 'String')
       {
-        return <StringInput input={input} key={input.reactKey} controllerHooksForm={controllerHooksForm} register={register} errors={errors}/>
+        return <StringInput input={input} key={input.reactKey} register={register} errors={errors}/>
       }
 
-      if(input.inputType === 'Date')
+      if('mask' in input && input.inputType === 'Date')
       {
         return <DateInput input={input} register={register} errors={errors} controllerHooksForm={controllerHooksForm}/>
       }
 
-      if(input.inputType === 'DateRange')
+      if('mask' in input && input.inputType === 'DateRange')
       {
         return <DateRangeInput input={input} register={register} errors={errors} controllerHooksForm={controllerHooksForm} getValues={getValues}/>
       }
 
-      if(input.inputType === 'MonthYear')
+      if('mask' in input && input.inputType === 'MonthYear')
       { 
         return <DateInput input={input} register={register} errors={errors} controllerHooksForm={controllerHooksForm}/>
       }
 
-      if(input.inputType === 'Time')
+      if('mask' in input && input.inputType === 'Time')
       {
         return <TimeInput input={input} register={register} errors={errors} controllerHooksForm={controllerHooksForm}/>
       }
 
       if(input.inputType === 'Boolean')
       {
-        return <BooleanInput input={input} key={input.reactKey} controllerHooksForm={controllerHooksForm} register={register} errors={errors}/>
+        return <BooleanInput input={input} key={input.reactKey} register={register} errors={errors}/>
       }
 
       if(input.inputType === 'Email')
@@ -69,12 +69,12 @@ export default function RenderInputs(props: RenderInputsProps) {
         return <EmailInput input={input} register={register} errors={errors} controllerHooksForm={controllerHooksForm} />
       }
 
-      if(input.inputType === 'CPF')
+      if('mask' in input && input.inputType === 'CPF')
       {
         return <CpfInput input={input} register={register} errors={errors} controllerHooksForm={controllerHooksForm}/>
       }
 
-      if(input.inputType === 'CNPJ')
+      if('mask' in input && input.inputType === 'CNPJ')
       {
         return <CnpjInput input={input} register={register} errors={errors} controllerHooksForm={controllerHooksForm} />
       }

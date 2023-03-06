@@ -25,12 +25,12 @@ export type hookFormsTypes = {
 
 /* Input Types */
 
-type integerInputType = basicInputType & {
+type maskedAndValidatedInputType = basicInputType & {
   mask: string;
   regex: RegExp;
-  scale: number;
   message: string;
 }
+
 
 type doubleFloatType = basicInputType & {
   mask: string;
@@ -41,30 +41,6 @@ type stringInputType = basicInputType & {
   maxLength: number;
 }
 
-type dateInputType = basicInputType & {
-  mask: string;
-  regex: RegExp;
-  message: string;
-}
-
-type dateRangeInputType = basicInputType & {
-  mask: string;
-  regex: RegExp;
-  message: string;
-}
-
-type timeInputType = basicInputType & {
-  mask: string;
-  regex: RegExp;
-  message: string;
-}
-
-type emailInputType = basicInputType & 
-{
-  mask: string;
-  regex: RegExp;
-  message: string;
-}
 
 type urlInputType = basicInputType & 
 {
@@ -72,19 +48,13 @@ type urlInputType = basicInputType &
   message: 'Url inválido!'
 }
 
-type cpfECnpjType = basicInputType & 
-{
-  mask: string;
-  regex: RegExp;
-  message: string;
-}
 
 type inscricaoEstualType = basicInputType &
 {
   maxLength?: number;
 }
 
-type TextareaType = basicInputType & {
+type textareaType = basicInputType & {
   rows: number;
   cols: number;
 }
@@ -92,7 +62,7 @@ type TextareaType = basicInputType & {
 /* Inputs Props */
 
 export type IntegerInputProps = {
-  input: integerInputType;
+  input: maskedAndValidatedInputType;
   controllerHooksForm: Control<FieldValues, any>;
 } & hookFormsTypes;
 
@@ -106,18 +76,18 @@ export type StringInputProps = {
 } & hookFormsTypes;
 
 export type DateInputProps = {
-  input: dateInputType;
+  input: maskedAndValidatedInputType;
   controllerHooksForm: Control<FieldValues, any>;
 } & hookFormsTypes;
 
 export type DateRangeInputProps = {
-  input: dateRangeInputType;
+  input: maskedAndValidatedInputType;
   controllerHooksForm: Control<FieldValues, any>;
   getValues: UseFormGetValues<FieldValues>;
 } & hookFormsTypes;
 
 export type TimeInputProps = {
-  input: timeInputType;
+  input: maskedAndValidatedInputType;
   controllerHooksForm: Control<FieldValues, any>;
 } & hookFormsTypes;
 
@@ -126,7 +96,7 @@ export type BooleanInputProps = {
 } & hookFormsTypes;
 
 export type EmailInputProps = {
-  input: emailInputType;
+  input: maskedAndValidatedInputType;
   controllerHooksForm: Control<FieldValues, any>;
 } & hookFormsTypes;
 
@@ -135,7 +105,7 @@ export type UrlInputProps = {
 } & hookFormsTypes;
 
 export type CpfECnpjInputProps = {
-  input: cpfECnpjType;
+  input: maskedAndValidatedInputType;
   controllerHooksForm: Control<FieldValues, any>;
 } & hookFormsTypes;
 
@@ -144,13 +114,13 @@ export type InscricaoEstualProps = {
 } & hookFormsTypes;
 
 export type TextareaProps = {
-  input: TextareaType,
+  input: textareaType,
 } & hookFormsTypes;
 
 
 // the render inputs props
 export type RenderInputsProps = hookFormsTypes & {
-  inputsList: integerInputType[] | doubleFloatType[] | stringInputType[];
+  inputsList: integerInputType[] | doubleFloatType[] | maskedAndValidatedInputType[] | inscricaoEstualType[] | urlInputType[] | textareaType[] ;
   controllerHooksForm: Control<FieldValues, any>;
   getValues: UseFormGetValues<FieldValues>;
 };
