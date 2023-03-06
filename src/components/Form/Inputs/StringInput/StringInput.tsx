@@ -1,15 +1,13 @@
-import { BasicInputProps } from 'components/Form/Types';
+import { StringInputProps } from 'components/Form/Types';
 
-export default function BasicInput(props: BasicInputProps) {
-  const { label, inputType, className, maxLength, uuid, required } =
-    props.input;
+export default function StringInput(props: StringInputProps) {
 
-  let cssClass = 'input ';
-  cssClass += className ? className : inputType;
-  cssClass += required ? ' required' : '';
+  const { label, inputType, className, maxLength, required } = props.input;
+
+  let cssClass = 'input String';
 
   return (
-    <div className={cssClass} key={uuid}>
+    <div className={cssClass}>
       <label>{label}:</label>
       <div className='input-error_message--container'>
         <input
@@ -24,5 +22,5 @@ export default function BasicInput(props: BasicInputProps) {
         )}
       </div>
     </div>
-  );
+  )
 }

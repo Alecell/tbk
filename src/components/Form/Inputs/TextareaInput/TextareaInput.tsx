@@ -1,10 +1,10 @@
-import { BasicInputProps } from 'components/Form/Types';
+import { TextareaProps } from 'components/Form/Types';
 
-export default function Textarea(props: BasicInputProps) {
+export default function TextareaInput(props: TextareaProps) {
   const { label, className, rows, cols } = props.input;
 
-  let cssClass = 'input ';
-  cssClass += className ? className : label;
+  let cssClass = 'input Text';
+  cssClass += className ? className : '';
 
   return (
     <div className={cssClass}>

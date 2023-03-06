@@ -3,13 +3,12 @@ import { Controller } from 'react-hook-form';
 import { IMaskInput } from 'react-imask';
 
 export default function DateRangeInput(props: DateRangeInputProps) {
-  const { controllerHooksForm } = props;
+  const { controllerHooksForm, errors } = props;
 
-  const { label, inputType, mask, message, className, uuid, required } = props.input;
+  const { label, mask, message, className, required } = props.input;
 
-  let classCss = 'input ';
-  classCss += className ? className : inputType;
-  classCss += required ? ' required' : '';
+  let classCss = 'input DateRange ';
+  classCss += className;
 
   const convertStringToNumber = (value: string) => {
     const dateStringWithoutBars = value?.split('/').reverse().join('');
@@ -18,12 +17,12 @@ export default function DateRangeInput(props: DateRangeInputProps) {
   };
 
   return (
-    <div className={classCss} key={uuid}>
+    <div className={classCss}>
       <label>{label}:</label>
       <div className="input-error_message--container">
         <Controller
           control={controllerHooksForm}
-          name={className || ''}
+          name={'dateRange'}
           render={({ field }) => (
             <div className="input-date-range--container">
               <IMaskInput
@@ -56,13 +55,14 @@ export default function DateRangeInput(props: DateRangeInputProps) {
                 props.getValues('dateRange')?.value2
               );
               if (!date1 && !date2) return;
+              console.log(date1, date2)
               return date2 >= date1 || message;
             },
           }}
         />
 
-        {props.errors?.dateRange && (
-          <span>{`${props.errors?.dateRange?.message}`}</span>
+        {errors?.dateRange && (
+          <span>{`${errors?.dateRange?.message}`}</span>
         )}
       </div>
     </div>
