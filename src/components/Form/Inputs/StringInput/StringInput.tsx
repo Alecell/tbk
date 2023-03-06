@@ -6,6 +6,7 @@ export default function StringInput(props: StringInputProps) {
 
   let cssClass = 'input String';
   cssClass += className ? className : '';
+  cssClass += required ? ' required' : '';
 
   return (
     <div className={cssClass}>

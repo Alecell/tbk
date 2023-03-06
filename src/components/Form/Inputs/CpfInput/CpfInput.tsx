@@ -9,6 +9,7 @@ export default function CpfInput(props: CpfECnpjInputProps) {
 
   let cssClass = 'input CPF ';
   cssClass += className ? className : '';
+  cssClass += required ? ' required' : '';
 
 
   return (

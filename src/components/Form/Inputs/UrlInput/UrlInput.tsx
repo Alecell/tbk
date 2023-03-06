@@ -8,6 +8,7 @@ export default function UrlInput(props: UrlInputProps) {
 
   let cssClass = 'input Url ';
   cssClass += className ? className : '';
+  cssClass += required ? ' required' : '';
 
   return (
     <div className={cssClass}>

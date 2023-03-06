@@ -9,6 +9,7 @@ export default function DateInput(props: DateInputProps) {
 
   let cssClass = 'input Date ';
   cssClass += className ? className : '';
+  cssClass += required ? ' required' : '';
 
 
   return (

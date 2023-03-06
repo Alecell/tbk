@@ -121,6 +121,10 @@ export type TimeInputProps = {
   controllerHooksForm: Control<FieldValues, any>;
 } & hookFormsTypes;
 
+export type BooleanInputProps = {
+  input: basicInputType;
+} & hookFormsTypes;
+
 export type EmailInputProps = {
   input: emailInputType;
   controllerHooksForm: Control<FieldValues, any>;

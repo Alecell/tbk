@@ -6,10 +6,11 @@ export default function TimeInput(props: TimeInputProps) {
   
   const { controllerHooksForm, errors } = props;
 
-  const { label, inputType, mask, regex, message, className, required} = props.input;
+  const { label, mask, regex, message, className, required} = props.input;
 
   let cssClass = 'input Time ';
   cssClass += className ? className : '';
+  cssClass += required ? ' required' : '';
 
   return (
     <div className={cssClass}>

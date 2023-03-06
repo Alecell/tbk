@@ -7,6 +7,7 @@ export default function InscricaoEstadualInput(props: InscricaoEstualProps) {
 
   let cssClass = 'input inscricaoEstadual ';
   cssClass += className ? className : '';
+  cssClass += required ? ' required' : '';
 
   return (
     <div className={cssClass}>

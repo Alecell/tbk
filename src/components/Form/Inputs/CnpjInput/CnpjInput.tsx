@@ -8,6 +8,7 @@ export default function CnpjInput(props: CpfECnpjInputProps) {
 
   let cssClass = 'input CNPJ ';
   cssClass += className ? className : '';
+  cssClass += required ? ' required' : '';
 
   return (
     <div className={cssClass}>

@@ -9,6 +9,7 @@ export default function DateRangeInput(props: DateRangeInputProps) {
 
   let cssClass = 'input DateRange ';
   cssClass += className ? className : '';
+  cssClass += required ? ' required' : '';
 
   const convertStringToNumber = (value: string) => {
     const dateStringWithoutBars = value?.split('/').reverse().join('');

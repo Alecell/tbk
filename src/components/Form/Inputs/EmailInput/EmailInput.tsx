@@ -9,6 +9,7 @@ export default function EmailInput(props: EmailInputProps) {
   
   let cssClass = 'input Email ';
   cssClass += className ? className : '';
+  cssClass += required ? ' required' : '';
 
   return (
     <div className={cssClass}>

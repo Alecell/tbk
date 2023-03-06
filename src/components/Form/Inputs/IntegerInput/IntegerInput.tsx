@@ -9,6 +9,7 @@ export default function IntegerInput(props: IntegerInputProps) {
 
   let cssClass = 'input Integer ';
   cssClass += className ? className : '';
+  cssClass += required ? ' required' : '';
 
   return (
     <div className={cssClass}>
