@@ -5,6 +5,7 @@ export default function StringInput(props: StringInputProps) {
   const { label, inputType, className, maxLength, required } = props.input;
 
   let cssClass = 'input String';
+  cssClass += className ? className : '';
 
   return (
     <div className={cssClass}>

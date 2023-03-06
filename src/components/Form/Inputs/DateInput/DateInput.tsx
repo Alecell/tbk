@@ -8,7 +8,8 @@ export default function DateInput(props: DateInputProps) {
   const { label, inputType, mask, message, regex, className, required } = props.input;
 
   let cssClass = 'input Date ';
-  cssClass += className;
+  cssClass += className ? className : '';
+
 
   return (
     <div className={cssClass}>

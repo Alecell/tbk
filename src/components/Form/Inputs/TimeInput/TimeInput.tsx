@@ -9,7 +9,7 @@ export default function TimeInput(props: TimeInputProps) {
   const { label, inputType, mask, regex, message, className, required} = props.input;
 
   let cssClass = 'input Time ';
-  cssClass += className;
+  cssClass += className ? className : '';
 
   return (
     <div className={cssClass}>

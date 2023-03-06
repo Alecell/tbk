@@ -8,7 +8,7 @@ export default function EmailInput(props: EmailInputProps) {
   const { label, inputType, regex, message, className, required} = props.input;
   
   let cssClass = 'input Email ';
-  cssClass += className;
+  cssClass += className ? className : '';
 
   return (
     <div className={cssClass}>

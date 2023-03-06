@@ -8,7 +8,8 @@ export default function CpfInput(props: CpfECnpjInputProps) {
   const { label, mask, message, regex, className, required } = props.input;
 
   let cssClass = 'input CPF ';
-  cssClass += className;
+  cssClass += className ? className : '';
+
 
   return (
     <div className={cssClass}>

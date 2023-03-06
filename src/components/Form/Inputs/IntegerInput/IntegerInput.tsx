@@ -8,7 +8,7 @@ export default function IntegerInput(props: IntegerInputProps) {
     props.input;
 
   let cssClass = 'input Integer ';
-  cssClass += className;
+  cssClass += className ? className : '';
 
   return (
     <div className={cssClass}>

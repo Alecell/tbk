@@ -1,11 +1,12 @@
-import { InscricaoEstualProps } from "components/Form/Types";
+import { UrlInputProps } from 'components/Form/Types';
+import React from 'react'
 
-export default function InscricaoEstadualInput(props: InscricaoEstualProps) {
-  
+export default function UrlInput(props: UrlInputProps) {
+
   const { register, errors } = props;
-  const { label, inputType, className, maxLength, required } = props.input;
+  const { label, inputType, className, regex, message, required } = props.input;
 
-  let cssClass = 'input inscricaoEstadual ';
+  let cssClass = 'input Url ';
   cssClass += className ? className : '';
 
   return (
@@ -14,8 +15,11 @@ export default function InscricaoEstadualInput(props: InscricaoEstualProps) {
       <div className='input-error_message--container'>
         <input
           type={inputType}
-          maxLength={maxLength}
           {...register(label, {
+            pattern: {
+              value: regex,
+              message: message
+            },
             required: required,
           })}
         />

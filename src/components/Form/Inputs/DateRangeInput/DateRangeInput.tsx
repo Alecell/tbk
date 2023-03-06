@@ -7,8 +7,8 @@ export default function DateRangeInput(props: DateRangeInputProps) {
 
   const { label, mask, message, className, required } = props.input;
 
-  let classCss = 'input DateRange ';
-  classCss += className;
+  let cssClass = 'input DateRange ';
+  cssClass += className ? className : '';
 
   const convertStringToNumber = (value: string) => {
     const dateStringWithoutBars = value?.split('/').reverse().join('');
@@ -17,7 +17,7 @@ export default function DateRangeInput(props: DateRangeInputProps) {
   };
 
   return (
-    <div className={classCss}>
+    <div className={cssClass}>
       <label>{label}:</label>
       <div className="input-error_message--container">
         <Controller

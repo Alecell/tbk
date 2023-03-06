@@ -1,110 +1,99 @@
 import './RenderInputs.scss';
 import './MediaQueriesInputs.scss';
-import Textarea from './Textarea/Textarea';
-import { verifiedInputType } from '../Types';
-import BasicInput from './BasicInput/BasicInput';
-import BooleanInput from './Boolean/BooleanInput';
-import MaskedInput from './MaskedInput/MaskedInput';
+
+import { RenderInputsProps } from '../Types';
+import IntegerInput from './IntegerInput/IntegerInput';
+import DoubleFloatInput from './DoubleFloatInput/DoubleFloatInput';
+import StringInput from './StringInput/StringInput';
+import DateInput from './DateInput/DateInput';
 import DateRangeInput from './DateRangeInput/DateRangeInput';
-import InputWithValidation from './InputWithValidation/InputWithValidation';
-import { RenderInputsProps, basicInputType, maskedInputType } from '../Types';
+import TimeInput from './TimeInput/TimeInput';
+import BooleanInput from './Boolean/BooleanInput';
+import EmailInput from './EmailInput/EmailInput';
+import CpfInput from './CpfInput/CpfInput';
+import CnpjInput from './CnpjInput/CnpjInput';
+import TextareaInput from './TextareaInput/TextareaInput';
+import InscricaoEstadualInput from './InscricaoEstadualInput/InscricaoEstadualInput';
+import UrlInput from './UrlInput/UrlInput';
 
 export default function RenderInputs(props: RenderInputsProps) {
   const { inputsList, register, errors, controllerHooksForm, getValues } =
     props;
 
-  const renderBooleanInput = (input: basicInputType) => {
-    return (
-      <BooleanInput
-        input={input}
-        register={register}
-        errors={errors}
-        key={input.uuid}
-      />
-    );
-  };
-
-  const basicInput = (input: basicInputType) => {
-    return (
-      <BasicInput
-        input={input}
-        register={register}
-        errors={errors}
-        key={input.uuid}
-      />
-    );
-  };
-
-  const renderMaskedInput = (input: maskedInputType) => {
-    return (
-      <MaskedInput
-        input={input}
-        register={register}
-        errors={errors}
-        controllerHooksForm={controllerHooksForm}
-        key={input.uuid}
-      />
-    );
-  };
-
-  const renderTextareaInput = (input: basicInputType) => {
-    return (
-      <Textarea
-        input={input}
-        register={register}
-        errors={errors}
-        key={input.uuid}
-      />
-    );
-  };
-
-  const renderInputWithValidation = (input: verifiedInputType) => {
-    return (
-      <InputWithValidation
-        input={input}
-        register={register}
-        errors={errors}
-        key={input.uuid}
-      />
-    );
-  };
-
-  const renderDateRangeInput = (input: maskedInputType) => {
-    return (
-      <DateRangeInput
-        input={input}
-        register={register}
-        errors={errors}
-        controllerHooksForm={controllerHooksForm}
-        getValues={getValues}
-        key={input.uuid}
-      />
-    );
-  };
 
   const renderAllInputs = () => {
     return inputsList.map((input) => {
-      if (input.inputType === 'boolean') {
-        return renderBooleanInput(input);
+
+      if(input.inputType === 'Integer')
+      {
+        return <IntegerInput input={input} controllerHooksForm={controllerHooksForm} register={register} errors={errors} />
       }
 
-      if ('mask' in input && input.inputType === 'DateRange') {
-        return renderDateRangeInput(input);
+      if(input.inputType === "Double/Float")
+      {
+        return <DoubleFloatInput input={input} key={input.reactKey} controllerHooksForm={controllerHooksForm} register={register} errors={errors}/>
+      }
+      
+      if(input.inputType === 'String')
+      {
+        return <StringInput input={input} key={input.reactKey} controllerHooksForm={controllerHooksForm} register={register} errors={errors}/>
       }
 
-      if ('mask' in input) {
-        return renderMaskedInput(input);
+      if(input.inputType === 'Date')
+      {
+        return <DateInput input={input} register={register} errors={errors} controllerHooksForm={controllerHooksForm}/>
       }
 
-      if ('regex' in input) {
-        return renderInputWithValidation(input);
+      if(input.inputType === 'DateRange')
+      {
+        return <DateRangeInput input={input} register={register} errors={errors} controllerHooksForm={controllerHooksForm} getValues={getValues}/>
       }
 
-      if (input.inputType === 'textarea') {
-        return renderTextareaInput(input);
+      if(input.inputType === 'MonthYear')
+      { 
+        return <DateInput input={input} register={register} errors={errors} controllerHooksForm={controllerHooksForm}/>
       }
 
-      return basicInput(input);
+      if(input.inputType === 'Time')
+      {
+        return <TimeInput input={input} register={register} errors={errors} controllerHooksForm={controllerHooksForm}/>
+      }
+
+      if(input.inputType === 'Boolean')
+      {
+        return <BooleanInput input={input} key={input.reactKey} controllerHooksForm={controllerHooksForm} register={register} errors={errors}/>
+      }
+
+      if(input.inputType === 'Email')
+      {
+        return <EmailInput input={input} register={register} errors={errors} controllerHooksForm={controllerHooksForm} />
+      }
+
+      if(input.inputType === 'CPF')
+      {
+        return <CpfInput input={input} register={register} errors={errors} controllerHooksForm={controllerHooksForm}/>
+      }
+
+      if(input.inputType === 'CNPJ')
+      {
+        return <CnpjInput input={input} register={register} errors={errors} controllerHooksForm={controllerHooksForm} />
+      }
+
+      if(input.inputType === 'InscricaoEstadual')
+      {
+        return <InscricaoEstadualInput input={input} register={register} errors={errors} />
+      }
+      
+      if(input.inputType ==='textarea')
+      {
+        return <TextareaInput input={input} register={register} errors={errors} />
+      }
+
+      if(input.inputType === 'Url')
+      {
+        return <UrlInput input={input} register={register} errors={errors} />
+      }
+
     });
   };
 

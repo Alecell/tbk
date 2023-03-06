@@ -8,7 +8,7 @@ export default function DoubleFloatInput(props: DoubleFloatProps) {
     props.input;
 
   let cssClass = 'input doubleFloat ';
-  cssClass += className;
+  cssClass += className ? className : '';
 
   return (
     <div className={cssClass}>
