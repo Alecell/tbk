@@ -58,7 +58,7 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-  transform: translateX(30px);
+  transform: translateX(32px);
 }
 
 /* Rounded sliders */
