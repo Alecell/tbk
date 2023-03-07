@@ -13,7 +13,7 @@ export default function IntegerInput(props: IntegerInputProps) {
 
   return (
     <div className={cssClass}>
-      <label>{label}:</label>
+      <label>{label}</label>
       <div className="input-error_message--container">
         <Controller
           control={controllerHooksForm}

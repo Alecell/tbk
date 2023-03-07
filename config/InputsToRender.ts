@@ -11,9 +11,7 @@
 
 export const inputsToRender = [
     { 
-        label: 'Idade:',
-        inputType: 'Integer',
-        required: 'Campo obrigátorio!'
+        inputType: 'Integer'
     },
     { 
         label: 'Double/Float:',
@@ -25,11 +23,22 @@ export const inputsToRender = [
         inputType: 'String',
     },
     { 
-        label: 'Idade:',
+        label: 'Data:',
         inputType: 'Date',
     },
     { 
         label: 'DateRange:',
         inputType: 'DateRange',
     },
+    {
+        label: 'Month/Year:',
+        inputType: 'MonthYear',
+    },
+    {
+        label: 'Boolean',
+        inputType: 'Boolean',
+    },
+    {
+        inputType: 'Time'
+    }
 ]

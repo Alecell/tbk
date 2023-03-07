@@ -13,7 +13,7 @@ export default function EmailInput(props: EmailInputProps) {
 
   return (
     <div className={cssClass}>
-      <label>{label}:</label>
+      <label>{label}</label>
       <div className="input-error_message--container">
         <input
           type={inputType}

@@ -14,7 +14,7 @@ export default function TimeInput(props: TimeInputProps) {
 
   return (
     <div className={cssClass}>
-      <label>{label}:</label>
+      <label>{label}</label>
       <div className="input-error_message--container">
         <Controller
           control={controllerHooksForm}

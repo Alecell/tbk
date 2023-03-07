@@ -9,7 +9,7 @@ export default function TextareaInput(props: TextareaProps) {
 
   return (
     <div className={cssClass}>
-      <label>{label}:</label>
+      <label>{label}</label>
       <textarea
         rows={rows}
         cols={cols}

@@ -19,7 +19,7 @@ export default function DateRangeInput(props: DateRangeInputProps) {
 
   return (
     <div className={cssClass}>
-      <label>{label}:</label>
+      <label>{label}</label>
       <div className="input-error_message--container">
         <Controller
           control={controllerHooksForm}
