@@ -124,12 +124,17 @@ export type RenderInputsProps = {
 
 // Types for acess the objs with string
 
-type allInputTypes = (maskedAndValidatedInputType|integerAndDoubleFloatType|stringEInscricaoEstadualInputType|urlInputType|textareaType)
+type allInputTypes =
+  | maskedAndValidatedInputType
+  | integerAndDoubleFloatType
+  | stringEInscricaoEstadualInputType
+  | urlInputType
+  | textareaType;
 
 export type preFormatedInputsType = {
-  [key: string]: allInputTypes
-}
+  [key: string]: allInputTypes;
+};
 
 export type inputsGeneratedReact = {
-  [key: string]: (input: any) => any;
-}
+  [key: string]: (input: allInputTypes) => any;
+};

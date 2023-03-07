@@ -32,7 +32,7 @@ export default function RenderInputs(props: RenderInputsProps) {
     props;
 
   const inputsGeneratedReact: inputsGeneratedReact = {
-    Integer: (input: integerAndDoubleFloatType) => (
+    Integer: (input) => (
       <IntegerInput
         input={input as integerAndDoubleFloatType}
         controllerHooksForm={controllerHooksForm}
@@ -41,7 +41,7 @@ export default function RenderInputs(props: RenderInputsProps) {
         key={input.reactKey}
       />
     ),
-    DoubleFloat: (input: integerAndDoubleFloatType) => (
+    DoubleFloat: (input) => (
       <DoubleFloatInput
         input={input as integerAndDoubleFloatType}
         key={input.reactKey}
@@ -50,7 +50,7 @@ export default function RenderInputs(props: RenderInputsProps) {
         errors={errors}
       />
     ),
-    String: (input: stringEInscricaoEstadualInputType) => (
+    String: (input) => (
       <StringInput
         input={input as stringEInscricaoEstadualInputType}
         register={register}
@@ -58,7 +58,7 @@ export default function RenderInputs(props: RenderInputsProps) {
         key={input.reactKey}
       />
     ),
-    Date: (input: maskedAndValidatedInputType) => (
+    Date: (input) => (
       <DateInput
         input={input as maskedAndValidatedInputType}
         register={register}
@@ -67,7 +67,7 @@ export default function RenderInputs(props: RenderInputsProps) {
         key={input.reactKey}
       />
     ),
-    DateRange: (input: maskedAndValidatedInputType) => (
+    DateRange: (input) => (
       <DateRangeInput
         input={input as maskedAndValidatedInputType}
         register={register}
@@ -77,7 +77,7 @@ export default function RenderInputs(props: RenderInputsProps) {
         key={input.reactKey}
       />
     ),
-    MonthYear: (input: maskedAndValidatedInputType) => (
+    MonthYear: (input) => (
       <DateInput
         input={input as maskedAndValidatedInputType}
         register={register}
@@ -86,7 +86,7 @@ export default function RenderInputs(props: RenderInputsProps) {
         key={input.reactKey}
       />
     ),
-    Time: (input: maskedAndValidatedInputType) => (
+    Time: (input) => (
       <TimeInput
         input={input as maskedAndValidatedInputType}
         register={register}
@@ -95,7 +95,7 @@ export default function RenderInputs(props: RenderInputsProps) {
         key={input.reactKey}
       />
     ),
-    Boolean: (input: maskedAndValidatedInputType) => (
+    Boolean: (input) => (
       <BooleanInput
         input={input}
         register={register}
@@ -103,7 +103,7 @@ export default function RenderInputs(props: RenderInputsProps) {
         key={input.reactKey}
       />
     ),
-    Email: (input: maskedAndValidatedInputType) => (
+    Email: (input) => (
       <EmailInput
         input={input as maskedAndValidatedInputType}
         register={register}
@@ -112,7 +112,7 @@ export default function RenderInputs(props: RenderInputsProps) {
         key={input.reactKey}
       />
     ),
-    CPF: (input: maskedAndValidatedInputType) => (
+    CPF: (input) => (
       <CpfInput
         input={input as maskedAndValidatedInputType}
         register={register}
@@ -121,7 +121,7 @@ export default function RenderInputs(props: RenderInputsProps) {
         key={input.reactKey}
       />
     ),
-    CNPJ: (input: maskedAndValidatedInputType) => (
+    CNPJ: (input) => (
       <CnpjInput
         input={input as maskedAndValidatedInputType}
         register={register}
@@ -130,7 +130,7 @@ export default function RenderInputs(props: RenderInputsProps) {
         key={input.reactKey}
       />
     ),
-    InscricaoEstadual: (input: stringEInscricaoEstadualInputType) => (
+    InscricaoEstadual: (input) => (
       <InscricaoEstadualInput
         input={input as stringEInscricaoEstadualInputType}
         register={register}
@@ -138,7 +138,7 @@ export default function RenderInputs(props: RenderInputsProps) {
         key={input.reactKey}
       />
     ),
-    textarea: (input: textareaType) => (
+    textarea: (input) => (
       <TextareaInput
         input={input as textareaType}
         register={register}
@@ -146,7 +146,7 @@ export default function RenderInputs(props: RenderInputsProps) {
         key={input.reactKey}
       />
     ),
-    Url: (input: urlInputType) => (
+    Url: (input) => (
       <UrlInput
         input={input as urlInputType}
         register={register}
