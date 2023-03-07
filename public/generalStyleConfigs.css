@@ -1,0 +1,8 @@
+:root {
+  --fontFamily: 'Roboto', sans-serif;
+  --errorMessageColor: red;
+  --requiredMessageColor: red;
+  --borderOnFocusColor: #2f58cd;
+  --textAreaBorderColor: black;
+  --requiredInputBorderColor: red;
+}
