@@ -4,7 +4,7 @@ import { IMaskInput } from 'react-imask';
 
 export default function DoubleFloatInput(props: DoubleFloatProps) {
   const { controllerHooksForm, errors } = props;
-  const { label, className, mask, required, scale } =
+  const { label, className, required, scale } =
     props.input;
 
   let cssClass = 'input doubleFloat ';
@@ -24,7 +24,7 @@ export default function DoubleFloatInput(props: DoubleFloatProps) {
             formState,
           }) => (
             <IMaskInput
-              mask={mask}
+              mask={Number}
               onAccept={(value, mask) => onChange(value)}
               scale={scale}
             />

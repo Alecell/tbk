@@ -4,7 +4,7 @@ import { IntegerInputProps } from 'components/Form/Types';
 
 export default function IntegerInput(props: IntegerInputProps) {
   const { controllerHooksForm, errors } = props;
-  const { label, className, mask, required } =
+  const { label, className, required } =
     props.input;
 
   let cssClass = 'input Integer ';
@@ -24,7 +24,7 @@ export default function IntegerInput(props: IntegerInputProps) {
             formState,
           }) => (
             <IMaskInput
-              mask={mask}
+              mask={Number}
               onAccept={(value, mask) => onChange(value)}
             />
           )}
