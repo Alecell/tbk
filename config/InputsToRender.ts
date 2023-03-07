@@ -39,6 +39,7 @@ export const inputsToRender = [
         inputType: 'Boolean',
     },
     {
-        inputType: 'Time'
+        inputType: 'Time',
+        required: 'Campo obrigátorio'
     }
 ]

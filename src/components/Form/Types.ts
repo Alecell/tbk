@@ -135,6 +135,6 @@ export type preFormatedInputsType = {
   [key: string]: allInputTypes;
 };
 
-export type inputsGeneratedReact = {
+export type inputsGeneratedReactType = {
   [key: string]: (input: allInputTypes) => any;
 };
