@@ -25,19 +25,19 @@ export type hookFormsTypes = {
 
 /* Input Types */
 
-type maskedAndValidatedInputType = basicInputType & {
+export type maskedAndValidatedInputType = basicInputType & {
   mask: string;
   regex: RegExp;
   message: string;
 }
 
 
-type integerAndDoubleFloatType = basicInputType & {
+export type integerAndDoubleFloatType = basicInputType & {
   mask: string;
   scale: number;
 }
 
-type stringEInscricaoEstadualInputType = basicInputType & {
+export type stringEInscricaoEstadualInputType = basicInputType & {
   maxLength: number;
 }
 
@@ -48,7 +48,7 @@ export type urlInputType = basicInputType &
   message: 'Url inválido!'
 }
 
-type textareaType = basicInputType & {
+export type textareaType = basicInputType & {
   rows: number;
   cols: number;
 }

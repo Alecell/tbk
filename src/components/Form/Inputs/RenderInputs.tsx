@@ -1,7 +1,7 @@
 import './RenderInputs.scss';
 import './MediaQueriesInputs.scss';
 
-import { RenderInputsProps } from '../Types';
+import { integerAndDoubleFloatType, maskedAndValidatedInputType, RenderInputsProps, stringEInscricaoEstadualInputType, textareaType, urlInputType } from '../Types';
 import IntegerInput from './IntegerInput/IntegerInput';
 import DoubleFloatInput from './DoubleFloatInput/DoubleFloatInput';
 import StringInput from './StringInput/StringInput';
@@ -15,26 +15,17 @@ import CnpjInput from './CnpjInput/CnpjInput';
 import TextareaInput from './TextareaInput/TextareaInput';
 import InscricaoEstadualInput from './InscricaoEstadualInput/InscricaoEstadualInput';
 import UrlInput from './UrlInput/UrlInput';
-import { urlInputType } from '../Types';
 
 export default function RenderInputs(props: RenderInputsProps) {
   const { inputsList, register, errors, controllerHooksForm, getValues } =
     props;
 
-    function determineUrl(toBeDetermined: urlInputType): toBeDetermined is urlInputType {
-      if((toBeDetermined as urlInputType).type)
-      {
-        return true;
-      }
-      return false;
-    }
-
   const renderAllInputs = () => {
     return inputsList.map((input) => {
-      if ('scale' in input && input.inputType === 'Integer') {
+      if (input.inputType === 'Integer') {
         return (
           <IntegerInput
-            input={input}
+            input={input as integerAndDoubleFloatType}
             controllerHooksForm={controllerHooksForm}
             register={register}
             errors={errors}
@@ -42,10 +33,10 @@ export default function RenderInputs(props: RenderInputsProps) {
         );
       }
 
-      if ('scale' in input && input.inputType === 'Double/Float') {
+      if (input.inputType === 'Double/Float') {
         return (
           <DoubleFloatInput
-            input={input}
+            input={input as integerAndDoubleFloatType}
             key={input.reactKey}
             controllerHooksForm={controllerHooksForm}
             register={register}
@@ -54,10 +45,10 @@ export default function RenderInputs(props: RenderInputsProps) {
         );
       }
 
-      if ('maxLength' in input && input.inputType === 'String') {
+      if (input.inputType === 'String') {
         return (
           <StringInput
-            input={input}
+            input={input as stringEInscricaoEstadualInputType}
             key={input.reactKey}
             register={register}
             errors={errors}
@@ -65,10 +56,10 @@ export default function RenderInputs(props: RenderInputsProps) {
         );
       }
 
-      if ('mask' in input && 'regex' in input && input.inputType === 'Date') {
+      if (input.inputType === 'Date') {
         return (
           <DateInput
-            input={input}
+            input={input as maskedAndValidatedInputType}
             register={register}
             errors={errors}
             controllerHooksForm={controllerHooksForm}
@@ -76,10 +67,10 @@ export default function RenderInputs(props: RenderInputsProps) {
         );
       }
 
-      if ('mask' in input && 'regex' in input && input.inputType === 'DateRange') {
+      if (input.inputType === 'DateRange') {
         return (
           <DateRangeInput
-            input={input}
+            input={input as maskedAndValidatedInputType}
             register={register}
             errors={errors}
             controllerHooksForm={controllerHooksForm}
@@ -88,10 +79,10 @@ export default function RenderInputs(props: RenderInputsProps) {
         );
       }
 
-      if ('mask' in input && 'regex' in input && input.inputType === 'MonthYear') {
+      if (input.inputType === 'MonthYear') {
         return (
           <DateInput
-            input={input}
+            input={input as maskedAndValidatedInputType}
             register={register}
             errors={errors}
             controllerHooksForm={controllerHooksForm}
@@ -99,10 +90,10 @@ export default function RenderInputs(props: RenderInputsProps) {
         );
       }
 
-      if ('mask' in input && 'regex' in input && input.inputType === 'Time') {
+      if (input.inputType === 'Time') {
         return (
           <TimeInput
-            input={input}
+            input={input as maskedAndValidatedInputType}
             register={register}
             errors={errors}
             controllerHooksForm={controllerHooksForm}
@@ -121,10 +112,10 @@ export default function RenderInputs(props: RenderInputsProps) {
         );
       }
 
-      if ('mask' in input && 'regex' in input && input.inputType === 'Email') {
+      if (input.inputType === 'Email') {
         return (
           <EmailInput
-            input={input}
+            input={input as maskedAndValidatedInputType}
             register={register}
             errors={errors}
             controllerHooksForm={controllerHooksForm}
@@ -132,10 +123,10 @@ export default function RenderInputs(props: RenderInputsProps) {
         );
       }
 
-      if ('mask' in input && 'regex' in input && input.inputType === 'CPF') {
+      if (input.inputType === 'CPF') {
         return (
           <CpfInput
-            input={input}
+            input={input as maskedAndValidatedInputType}
             register={register}
             errors={errors}
             controllerHooksForm={controllerHooksForm}
@@ -143,10 +134,10 @@ export default function RenderInputs(props: RenderInputsProps) {
         );
       }
 
-      if ('mask' in input && 'regex' in input && input.inputType === 'CNPJ') {
+      if (input.inputType === 'CNPJ') {
         return (
           <CnpjInput
-            input={input}
+            input={input as maskedAndValidatedInputType}
             register={register}
             errors={errors}
             controllerHooksForm={controllerHooksForm}
@@ -157,21 +148,21 @@ export default function RenderInputs(props: RenderInputsProps) {
       if (input.inputType === 'InscricaoEstadual') {
         return (
           <InscricaoEstadualInput
-            input={input}
+            input={input as stringEInscricaoEstadualInputType}
             register={register}
             errors={errors}
           />
         );
       }
 
-      if ('rows' in input && input.inputType === 'textarea') {
+      if (input.inputType === 'textarea') {
         return (
-          <TextareaInput input={input} register={register} errors={errors} />
+          <TextareaInput input={input as textareaType} register={register} errors={errors} />
         );
       }
 
-      if (input.type) {
-        return <UrlInput input={input} register={register} errors={errors} />;
+      if (input.inputType === 'Url') {
+        return <UrlInput input={input as urlInputType} register={register} errors={errors} />;
       }
     });
   };
