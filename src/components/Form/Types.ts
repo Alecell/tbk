@@ -110,7 +110,7 @@ export type TextareaProps = {
 // the render inputs props
 
 export type configInputsToRenderType = {
-  label: string;
+  label?: string;
   inputType: string;
   required?: string | boolean;
   className?: string;
