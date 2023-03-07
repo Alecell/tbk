@@ -33,12 +33,11 @@ export type maskedAndValidatedInputType = basicInputType & {
 
 
 export type integerAndDoubleFloatType = basicInputType & {
-  mask: string;
   scale: number;
 }
 
 export type stringEInscricaoEstadualInputType = basicInputType & {
-  maxLength: number;
+  maxLength?: number;
 }
 
 
@@ -112,9 +111,10 @@ export type TextareaProps = {
 } & hookFormsTypes;
 
 // the render inputs props
-export type RenderInputsProps = hookFormsTypes & {
-  inputsList: maskedAndValidatedInputType[] | stringEInscricaoEstadualInputType[] | urlInputType[] | textareaType[] | integerAndDoubleFloatType[];
+
+export type RenderInputsProps = {
+  inputsList:  (maskedAndValidatedInputType | stringEInscricaoEstadualInputType | urlInputType | textareaType | integerAndDoubleFloatType)[];
   controllerHooksForm: Control<FieldValues, any>;
   getValues: UseFormGetValues<FieldValues>;
-};
+} & hookFormsTypes;
 

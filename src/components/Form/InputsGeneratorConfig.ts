@@ -1,15 +1,15 @@
-const inputList = [
+import { integerAndDoubleFloatType, maskedAndValidatedInputType, stringEInscricaoEstadualInputType, textareaType, urlInputType } from "./Types";
+
+const inputsList = [
   {
     label: 'Integer',
     inputType: 'Integer',
-    mask: Number,
     scale: 0,
     reactKey: crypto.randomUUID(),
   },
   {
     label: 'Double/Float',
     inputType: 'Double/Float',
-    mask: Number,
     scale: 4,
     reactKey: crypto.randomUUID()
   },
@@ -101,4 +101,4 @@ const inputList = [
 
 ];
 
-export { inputList };
+export { inputsList };
