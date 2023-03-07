@@ -1,14 +1,15 @@
 import 'components/Form/Form.scss';
-import { inputsList } from 'components/Form/InputsGeneratorConfig';
 import RenderInputs from 'components/Form/Inputs/RenderInputs';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { inputsToRender } from '../../../config/InputsToRender';
+
 export default function Form() {
   const {
     handleSubmit,
     register,
     formState: { errors },
     control,
-    getValues
+    getValues,
   } = useForm();
 
   const onSubmit: SubmitHandler<any> = (data) => console.log(data);
@@ -16,7 +17,7 @@ export default function Form() {
   return (
     <form className="Form" onSubmit={handleSubmit(onSubmit)}>
       <RenderInputs
-        inputsList={inputsList}
+        inputsList={inputsToRender}
         register={register}
         errors={errors}
         controllerHooksForm={control}

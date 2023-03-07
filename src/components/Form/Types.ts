@@ -112,8 +112,15 @@ export type TextareaProps = {
 
 // the render inputs props
 
+export type configInputsToRenderType = {
+  label: string;
+  inputType: string;
+  required?: string | booean;
+  className?: string;
+}
+
 export type RenderInputsProps = {
-  inputsList:  (maskedAndValidatedInputType | stringEInscricaoEstadualInputType | urlInputType | textareaType | integerAndDoubleFloatType)[];
+  inputsList:  configInputsToRenderType[];
   controllerHooksForm: Control<FieldValues, any>;
   getValues: UseFormGetValues<FieldValues>;
 } & hookFormsTypes;
