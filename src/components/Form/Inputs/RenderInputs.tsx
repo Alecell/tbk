@@ -2,8 +2,11 @@ import './RenderInputs.scss';
 import './MediaQueriesInputs.scss';
 
 import {
+  basicInputType,
+  inputsGeneratedReact,
   integerAndDoubleFloatType,
   maskedAndValidatedInputType,
+  preFormatedInputsType,
   RenderInputsProps,
   stringEInscricaoEstadualInputType,
   textareaType,
@@ -28,7 +31,7 @@ export default function RenderInputs(props: RenderInputsProps) {
   const { inputsList, register, errors, controllerHooksForm, getValues } =
     props;
 
-  const inputsGeneratedReact = {
+  const inputsGeneratedReact: inputsGeneratedReact = {
     Integer: (input: integerAndDoubleFloatType) => (
       <IntegerInput
         input={input as integerAndDoubleFloatType}

@@ -1,4 +1,6 @@
-const preFormatedInputs = {
+import { preFormatedInputsType } from "./Types";
+
+const preFormatedInputs: preFormatedInputsType = {
   Integer: {
     label: 'Integer',
     inputType: 'Integer',

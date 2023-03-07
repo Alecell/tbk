@@ -29,28 +29,25 @@ export type maskedAndValidatedInputType = basicInputType & {
   mask: string;
   regex: RegExp;
   message: string;
-}
-
+};
 
 export type integerAndDoubleFloatType = basicInputType & {
   scale: number;
-}
+};
 
 export type stringEInscricaoEstadualInputType = basicInputType & {
   maxLength?: number;
-}
+};
 
-
-export type urlInputType = basicInputType & 
-{
-  regex: RegExp,
-  message: 'Url inválido!'
-}
+export type urlInputType = basicInputType & {
+  regex: RegExp;
+  message: 'Url inválido!';
+};
 
 export type textareaType = basicInputType & {
   rows: number;
   cols: number;
-}
+};
 
 /* Inputs Props */
 
@@ -107,7 +104,7 @@ export type InscricaoEstualProps = {
 } & hookFormsTypes;
 
 export type TextareaProps = {
-  input: textareaType,
+  input: textareaType;
 } & hookFormsTypes;
 
 // the render inputs props
@@ -115,13 +112,24 @@ export type TextareaProps = {
 export type configInputsToRenderType = {
   label: string;
   inputType: string;
-  required?: string | booean;
+  required?: string | boolean;
   className?: string;
-}
+};
 
 export type RenderInputsProps = {
-  inputsList:  configInputsToRenderType[];
+  inputsList: configInputsToRenderType[];
   controllerHooksForm: Control<FieldValues, any>;
   getValues: UseFormGetValues<FieldValues>;
 } & hookFormsTypes;
 
+// Types for acess the objs with string
+
+type allInputTypes = (maskedAndValidatedInputType|integerAndDoubleFloatType|stringEInscricaoEstadualInputType|urlInputType|textareaType)
+
+export type preFormatedInputsType = {
+  [key: string]: allInputTypes
+}
+
+export type inputsGeneratedReact = {
+  [key: string]: (input: any) => any;
+}
