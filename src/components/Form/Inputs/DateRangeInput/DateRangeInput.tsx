@@ -56,7 +56,6 @@ export default function DateRangeInput(props: DateRangeInputProps) {
                 props.getValues('dateRange')?.value2
               );
               if (!date1 && !date2) return;
-              console.log(date1, date2)
               return date2 >= date1 || message;
             },
           }}

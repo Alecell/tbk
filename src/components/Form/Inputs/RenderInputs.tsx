@@ -28,9 +28,7 @@ import { preFormatedInputs } from '../InputsGeneratorConfig';
 export default function RenderInputs(props: RenderInputsProps) {
   const { inputsList, register, errors, controllerHooksForm, getValues } =
     props;
-
-    console.log(stylesWithMediaQuerys)
-
+    
   const inputsGeneratedReact: inputsGeneratedReactType = {
     Integer: (input) => (
       <IntegerInput
