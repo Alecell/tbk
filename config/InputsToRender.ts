@@ -35,7 +35,7 @@ export const inputsToRender = [
         inputType: 'MonthYear',
     },
     {
-        label: 'Boolean',
+        label: 'Boolean:',
         inputType: 'Boolean',
     },
     {
