@@ -1,6 +1,6 @@
-import './RenderInputs.scss';
+//import './RenderInputs.scss';
 import './MediaQueriesInputs.scss';
-
+import { styles } from './RenderInputs.style';
 import {
   inputsGeneratedReactType,
   integerAndDoubleFloatType,
@@ -164,5 +164,5 @@ export default function RenderInputs(props: RenderInputsProps) {
     });
   };
 
-  return <>{renderAllInputs()}</>;
+  return <div css={styles}>{renderAllInputs()}</div>;
 }
