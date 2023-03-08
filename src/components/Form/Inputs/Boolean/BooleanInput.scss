@@ -1,11 +1,9 @@
+@import '/config/generalConfigStyles.scss';
+
 $boolean-width: 60px;
 $boolean-height: 26px;
-$boolean-color-unchecked: #ccc;
-$boolean-color-checked: #228b22;
-
 $ball-width: 18px;
 $ball-height: 18px;
-$ball-color: white;
 
 .Boolean {
   padding: 2px 0;
@@ -33,7 +31,7 @@ $ball-color: white;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: $boolean-color-unchecked;
+  background-color: $booleanColorUnchecked;
   transition: 0.4s;
 }
 
@@ -44,17 +42,17 @@ $ball-color: white;
   width: $ball-width;
   left: 4px;
   bottom: 4px;
-  background-color: $ball-color;
+  background-color: $booleanBallColor;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: $boolean-color-checked;
+  background-color: $activeBooleanColor;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px $boolean-color-checked;
+  box-shadow: 0 0 1px $activeBooleanColor;
 }
 
 input:checked + .slider:before {

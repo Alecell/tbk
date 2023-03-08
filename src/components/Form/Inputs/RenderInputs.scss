@@ -1,3 +1,5 @@
+@import '/config/generalConfigStyles.scss';
+
 .input {
   display: flex;
   align-items: center;
@@ -10,7 +12,7 @@
 
   input,
   textarea {
-    border: 1px solid var(--textAreaBorderColor);
+    border: 1px solid $textAreaBorderColor;
     border-radius: 5px;
   }
 
@@ -25,7 +27,7 @@
   span {
     align-self: flex-start;
     font-size: 0.8em;
-    color: var(--errorMessageColor);
+    color: $errorMessageColor;
   }
 }
 
@@ -103,11 +105,11 @@
 input:focus,
 textarea:focus {
   outline: none;
-  border: 2px solid var(--borderOnFocusColor);
+  border: 2px solid $borderOnFocusColor;
 }
 
 .required input {
-  border: 1px solid var(--requiredMessageColor);
+  border: 1px solid $requiredMessageColor;
 }
 
 /* Test Css */

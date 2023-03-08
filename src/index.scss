@@ -1,8 +1,10 @@
+@import '/config/generalConfigStyles.scss';
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: var(--fontFamily);
+  font-family: $fontFamily;
 }
 
 .App {
