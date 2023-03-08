@@ -15,7 +15,7 @@ export const styles = css({
     width: 0,
     height: 0,
     ':checked + .slider': {
-      backgroundColor: '#228b22',
+      backgroundColor: `${import.meta.env.VITE_BOOLEAN_ACTIVE_COLOR}`,
     },
     ':checked + .slider:before': {
       transform: 'translateX(32px)',
@@ -28,7 +28,7 @@ export const styles = css({
     left: 0,
     right: 0,
     bottom: 0,
-    backgroundColor: '#ccc',
+    backgroundColor: `${import.meta.env.VITE_BOOLEAN_NOT_ACTIVE_COLOR}`,
     transition: '0.4s',
     ':before': {
       position: 'absolute',
@@ -37,7 +37,7 @@ export const styles = css({
       width: '18px',
       left: '4px',
       bottom: '4px',
-      backgroundColor: 'white',
+      backgroundColor: `${import.meta.env.VITE_BOOLEAN_COLOR_BALL}`,
       transition: '0.4s',
     },
   },

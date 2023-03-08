@@ -91,4 +91,4 @@ const styles = css({
   },
 });
 
-export const stylesWithMediaQuerys = {...styles}
+export const stylesWithMediaQuerys = css({...styles})
