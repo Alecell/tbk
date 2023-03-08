@@ -1,6 +1,6 @@
 //import './RenderInputs.scss';
-import './MediaQueriesInputs.scss';
-import { styles } from './RenderInputs.style';
+//import './MediaQueriesInputs.scss';
+import { stylesWithMediaQuerys } from './RenderInputs.style';
 import {
   inputsGeneratedReactType,
   integerAndDoubleFloatType,
@@ -28,6 +28,8 @@ import { preFormatedInputs } from '../InputsGeneratorConfig';
 export default function RenderInputs(props: RenderInputsProps) {
   const { inputsList, register, errors, controllerHooksForm, getValues } =
     props;
+
+    console.log(stylesWithMediaQuerys)
 
   const inputsGeneratedReact: inputsGeneratedReactType = {
     Integer: (input) => (
@@ -164,5 +166,5 @@ export default function RenderInputs(props: RenderInputsProps) {
     });
   };
 
-  return <div css={styles}>{renderAllInputs()}</div>;
+  return <div css={stylesWithMediaQuerys}>{renderAllInputs()}</div>;
 }

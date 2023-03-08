@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
-
-export const styles = css({
+import { mediaQueryStyles } from './MediaQueriesInputs.style';
+const styles = css({
   ' .input': {
     display: 'flex',
     alignItems: 'center',
@@ -90,3 +90,5 @@ export const styles = css({
     border: '1px solid red',
   },
 });
+
+export const stylesWithMediaQuerys = {...styles}
